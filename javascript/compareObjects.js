@@ -5,12 +5,12 @@
 var _ = require('lodash');
 
 module.exports = {
-  // A module that compares and returns boolean for two objects passed
+  // 1. A module that compares and returns boolean for two objects passed
   doObjectsEqual: function(object1, object2) {
     // Return the result from the strict equal statement
     return JSON.stringify(object1) === JSON.stringify(object2);
   },
-  // A module that compares and returns the difference for two objects passed
+  // 2. A module that compares and returns the difference for two objects passed
   listObjectDifferences: function(object1, object2) {
     // Reduce the the first object
     var reduceConcatAndReturnDifferentKey = _.reduce(object1, function(result, value, key) {
@@ -20,6 +20,7 @@ module.exports = {
             result : result.concat(key);
     }, []);
 
+    // Return the array of diffenciating keys as a string
     return reduceConcatAndReturnDifferentKey.toString();
   }
 }
