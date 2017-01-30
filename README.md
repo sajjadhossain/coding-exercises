@@ -10,7 +10,10 @@
 - [x] [Fibonacci Sequence](./javascript/fibonacciSequence.js)
 - [x] [Reverse String by Letter](./javascript/reverseStringByLetter.js)
 - [x] [Reverse String by Space](./javascript/reverseStringBySpace.js)
-- [ ] Is Prime Number
-- [ ] Is Integer
+- [x] [Is Prime Number](./javascript/isPrimeNumber.js)
+- [x] [Is Integer](./javascript/isInteger.js)
 - [x] [Find Average](./javascript/findAverage.js)
 - [ ] Do Objects Equal
+- [ ] List Objects Differences
+- [ ] Is Compound Word
+- [ ] List Compound Words
