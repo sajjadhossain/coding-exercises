@@ -1,7 +1,7 @@
 // Objective: Write a function that reverse orders a passed string by space
 
-// A constant for a function that reorders a given string
-module.exports = function reverse(string) {
+// A module that reverses a given string by letter
+module.exports = function reverseByLetter(string) {
   // Split the string
   var splitByLetter = string.split('');
   // Then reverse by letter, returned as an object
