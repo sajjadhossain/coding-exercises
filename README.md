@@ -10,7 +10,7 @@
 - [x]: [Fibonacci Sequence](./javascript/fibonacciSequence.js)
 - [x]: [Reverse String by Letter](./javascript/reverseStringByLetter.js)
 - [x]: [Reverse String by Space](./javascript/reverseStringBySpace.js)
-- []: Is Prime Number
-- []: Is Integer
-- []: Find Average
-- []: Do Objects Equal
+- [ ]: Is Prime Number
+- [ ]: Is Integer
+- [ ]: Find Average
+- [ ]: Do Objects Equal
