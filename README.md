@@ -3,7 +3,7 @@
 ## Get Started
 
 1. `npm install`
-2. `./node_modules/.bin/mocha javascript/test/specs/**.js`
+2. `npm run test` or `./node_modules/.bin/mocha javascript/test/specs/**.js`
 
 ## Javascript
 
