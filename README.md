@@ -12,5 +12,5 @@
 - [x] [Reverse String by Space](./javascript/reverseStringBySpace.js)
 - [ ] Is Prime Number
 - [ ] Is Integer
-- [x] Find Average
+- [x] [Find Average](./javascript/findAverage.js)
 - [ ] Do Objects Equal
