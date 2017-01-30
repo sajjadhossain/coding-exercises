@@ -15,5 +15,5 @@
 - [x] [Find Average](./javascript/findAverage.js)
 - [x] [Do Objects Equal](./javascript/compareObjects.js)
 - [x] [List Objects Differences](./javascript/compareObjects.js)
-- [x] [Is Compound Word](./javascript/compoundWords.js)
+- [ ] [Is Compound Word](./javascript/compoundWords.js)
 - [ ] [List Compound Words](./javascript/compoundWords.js)
