@@ -2,6 +2,6 @@
 
 // A module that returns true or false given a parameter
 module.exports = function isInteger(value) {
-    // Return the value from .isInteger Method
+    // Return the value from Number.isInteger method
     return Number.isInteger(value);
 };

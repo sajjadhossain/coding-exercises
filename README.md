@@ -13,7 +13,7 @@
 - [x] [Is Prime Number](./javascript/isPrimeNumber.js)
 - [x] [Is Integer](./javascript/isInteger.js)
 - [x] [Find Average](./javascript/findAverage.js)
-- [ ] Do Objects Equal
-- [ ] List Objects Differences
+- [x] [Do Objects Equal](./javascript/compareObjects.js)
+- [x] [List Objects Differences](./javascript/compareObjects.js)
 - [ ] Is Compound Word
 - [ ] List Compound Words
