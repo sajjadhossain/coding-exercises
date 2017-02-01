@@ -19,7 +19,7 @@ describe('find averages', function() {
   _.forEach(setsToTest, function(set) {
     var findAverage = require('../../findAverage');
 
-    it('findAverage(' + set.toString() + ')' + ' => ' + set.average, function() {
+    it('findAverage(' + set.numbers.toString() + ')' + ' => ' + set.average, function() {
       chai.assert(findAverage(set.numbers) === set.average, 'Expected ' + findAverage(set.numbers) + ' to equal ' + set.average)
     });
   });
