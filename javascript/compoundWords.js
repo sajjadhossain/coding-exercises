@@ -21,7 +21,7 @@ module.exports = {
       }
 
       // If occurances.legnth is greater than 2 and the value from the dictionary is not the word passed with the function
-      if (Object.keys(occurances).length > 2 && value != word) {
+      if (Object.keys(occurances).length > 1 && value != word) {
         // Set isCompound to true
         isCompound = true;
       }

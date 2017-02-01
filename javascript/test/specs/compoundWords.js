@@ -20,6 +20,21 @@ var wordsToTest = {
     input: 'shutterstock',
     result: true,
     words: 'shut,shutter,stock'
+  },
+  5: {
+    input: 'snap',
+    result: false,
+    words: ''
+  },
+  6: {
+    input: 'chat',
+    result: false,
+    words: ''
+  },
+  7: {
+    input: 'snapchat',
+    result: true,
+    words: 'snap,chat'
   }
 }
 
