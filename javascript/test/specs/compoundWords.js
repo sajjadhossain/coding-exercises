@@ -1,42 +1,42 @@
 var chai = require('chai');
 var _ = require('lodash');
-var wordsToTest = {
-  1: {
+var wordsToTest = [
+  {
     input: 'shut',
     result: false,
     words: ''
   },
-  2: {
+  {
     input: 'shutter',
     result: false,
     words: ''
   },
-  3: {
+  {
     input: 'stock',
     result: false,
     words: ''
   },
-  4: {
+  {
     input: 'shutterstock',
     result: true,
     words: 'shut,shutter,stock'
   },
-  5: {
+  {
     input: 'snap',
     result: false,
     words: ''
   },
-  6: {
+  {
     input: 'chat',
     result: false,
     words: ''
   },
-  7: {
+  {
     input: 'snapchat',
     result: true,
     words: 'snap,chat'
   }
-}
+];
 
 describe('is compound word', function() {
   var isCompoundWord = require('../../compoundWords').isCompoundWord;

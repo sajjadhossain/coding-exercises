@@ -13,12 +13,22 @@ var indexesToTest = {
   10: 55
 };
 
-describe('fibonacci sequence', function() {
+describe('recursive fibonacci sequence', function() {
   _.forEach(indexesToTest, function(value, key) {
-    var fib = require('../../fibonacciSequence');
+    var recursiveFibonacci = require('../../fibonacciSequence').recursiveFibonacci;
 
-    it('fib(' + key + ')' + ' => ' + value, function() {
-      return chai.assert(fib(key) === value, 'Expected ' + fib(key) + ' to equal ' + value);
+    it('recursiveFibonacci(' + key + ')' + ' => ' + value, function() {
+      return chai.assert(recursiveFibonacci(key) === value, 'Expected ' + recursiveFibonacci(key) + ' to equal ' + value);
+    })
+  });
+});
+
+describe('looped fibonacci sequence', function() {
+  _.forEach(indexesToTest, function(value, key) {
+    var loopedFibonacci = require('../../fibonacciSequence').loopedFibonacci;
+
+    it('loopedFibonacci(' + key + ')' + ' => ' + value, function() {
+      return chai.assert(loopedFibonacci(key) === value, 'Expected ' + loopedFibonacci(key) + ' to equal ' + value);
     })
   });
 });

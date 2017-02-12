@@ -13,15 +13,13 @@ module.exports = {
 
     // For each words passed
     _.forEach(words, function(value, key) {
-      if (word.match(value) != null && value != word) {
-        // Construct an occurance by key
-        occurances[key] = {};
+      if (word.match(value) !== null && value !== word) {
         // Set the value to the array returned from .match()
         occurances[key] = word.match(value);
       }
 
       // If occurances.legnth is greater than 2 and the value from the dictionary is not the word passed with the function
-      if (Object.keys(occurances).length > 1 && value != word) {
+      if (Object.keys(occurances).length > 1 && value !== word) {
         // Set isCompound to true
         isCompound = true;
       }
@@ -38,8 +36,6 @@ module.exports = {
     // For each words passed
     _.forEach(words, function(value, key) {
       if (word.match(value) != null && value != word) {
-        // Construct an occurance by key
-        occurances[key] = {};
         // Set the value to the array returned from .match()
         occurances[key] = word.match(value);
         // Push the word the compoundWords array
