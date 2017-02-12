@@ -7,9 +7,12 @@
 
 ## Javascript
 
-- [x] [Fibonacci Sequence](./javascript/fibonacciSequence.js)
+- [x] [Fibonacci Looped](./javascript/fibonacciSequence.js)
+- [x] [Fibonacci Recursive](./javascript/fibonacciSequence.js)
 - [x] [Reverse String by Letter](./javascript/reverseStringByLetter.js)
 - [x] [Reverse String by Space](./javascript/reverseStringBySpace.js)
+- [ ] [Reverse String by Letter without Mehtods](./javascript/reverseStringByLetter.js)
+- [ ] [Reverse String by Space without Mehtods](./javascript/reverseStringBySpace.js)
 - [x] [Is Prime Number](./javascript/isPrimeNumber.js)
 - [x] [Is Integer](./javascript/isInteger.js)
 - [x] [Find Average](./javascript/findAverage.js)
@@ -17,3 +20,6 @@
 - [x] [List Objects Differences](./javascript/compareObjects.js)
 - [x] [Is Compound Word](./javascript/compoundWords.js)
 - [x] [List Compound Words](./javascript/compoundWords.js)
+- [x] [For Each Function](./javascript/forEach.js)
+- [ ] [Get Neighbors Coordinates](./javascript/neighbors.js)
+- [ ] [Cat and Dog](./javascript/catAndDog.js)
