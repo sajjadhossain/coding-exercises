@@ -31,7 +31,7 @@ var stringsBySpaceToTest = {
 
 describe('reverse string by letter', function() {
   _.forEach(stringsByLetterToTest, function(string) {
-    var reverseStringByLetters = require('../../reverseStringByLetter.js');
+    var reverseStringByLetters = require('../../reverseString.js').byLetter;
 
     it('reverseStringByLetters(' + string.reverse + ')' + ' => ' + string.expected, function() {
       chai.assert(reverseStringByLetters(string.reverse) === string.expected, 'Expected ' + reverseStringByLetters(string.reverse) + ' to equal ' + string.expected)
@@ -41,10 +41,30 @@ describe('reverse string by letter', function() {
 
 describe('reverse string by space', function() {
   _.forEach(stringsBySpaceToTest, function(string) {
-    var reverseStringBySpace = require('../../reverseStringBySpace.js');
+    var reverseStringBySpace = require('../../reverseString.js').bySpace;
 
     it('reverseStringBySpace(' + string.reverse + ')' + ' => ' + string.expected, function() {
       chai.assert(reverseStringBySpace(string.reverse) === string.expected, 'Expected ' + reverseStringBySpace(string.reverse) + ' to equal ' + string.expected)
+    });
+  });
+});
+
+describe('reverse string by letter without methods', function() {
+  _.forEach(stringsByLetterToTest, function(string) {
+    var reverseStringByLettersWithoutMethods = require('../../reverseString.js').byLetterWithoutMethods;
+
+    it('reverseStringByLettersWithoutMethods(' + string.reverse + ')' + ' => ' + string.expected, function() {
+      chai.assert(reverseStringByLettersWithoutMethods(string.reverse) === string.expected, 'Expected ' + reverseStringByLettersWithoutMethods(string.reverse) + ' to equal ' + string.expected)
+    });
+  });
+});
+
+describe('reverse string by space without methods', function() {
+  _.forEach(stringsBySpaceToTest, function(string) {
+    var reverseStringBySpaceWithoutMethods = require('../../reverseString.js').bySpaceWithoutMethods;
+
+    it('reverseStringBySpaceWithoutMethods(' + string.reverse + ')' + ' => ' + string.expected, function() {
+      chai.assert(reverseStringBySpaceWithoutMethods(string.reverse) === string.expected, 'Expected ' + reverseStringBySpaceWithoutMethods(string.reverse) + ' to equal ' + string.expected)
     });
   });
 });

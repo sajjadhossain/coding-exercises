@@ -18,7 +18,7 @@ describe('recursive fibonacci sequence', function() {
     var recursiveFibonacci = require('../../fibonacciSequence').recursiveFibonacci;
 
     it('recursiveFibonacci(' + key + ')' + ' => ' + value, function() {
-      return chai.assert(recursiveFibonacci(key) === value, 'Expected ' + recursiveFibonacci(key) + ' to equal ' + value);
+      chai.assert(recursiveFibonacci(key) === value, 'Expected ' + recursiveFibonacci(key) + ' to equal ' + value);
     })
   });
 });
@@ -28,7 +28,7 @@ describe('looped fibonacci sequence', function() {
     var loopedFibonacci = require('../../fibonacciSequence').loopedFibonacci;
 
     it('loopedFibonacci(' + key + ')' + ' => ' + value, function() {
-      return chai.assert(loopedFibonacci(key) === value, 'Expected ' + loopedFibonacci(key) + ' to equal ' + value);
+      chai.assert(loopedFibonacci(key) === value, 'Expected ' + loopedFibonacci(key) + ' to equal ' + value);
     })
   });
 });
