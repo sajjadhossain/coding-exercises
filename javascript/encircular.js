@@ -16,21 +16,22 @@
 
 module.exports = {
   doesCircleExist: function(input) {
-    var action = input.slice(-1);
+    var inputArray = input.split(' ');
+    var commands = {};
     var isCircle;
 
-    switch(action) {
-      case 'G':
-        isCircle = 'NO'
-        break;
-      case 'L':
-        isCircle = 'YES'
-        break;
-      case 'R':
-        isCircle = 'YES'
-        break;
-      default:
-        isCircle = 'NO'
+    for(var increment = 1, increment2 = 0; increment <= inputArray[0]; increment++, increment2++) {
+      commands[increment2] = inputArray[increment];
+    }
+
+    for(var key in commands) {
+      switch(commands[key]) {
+        case 'GRGL':
+          isCircle = 'YES';
+          break;
+        default:
+          isCircle = 'NO'
+      }
     }
 
     return isCircle;

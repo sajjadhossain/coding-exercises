@@ -2,15 +2,11 @@ var chai = require('chai');
 var _ = require('lodash');
 var inputs = {
   1: {
-    input: '4, G, L, G, G',
+    input: '2 G L',
     expectedOutcome: 'NO'
   },
   2: {
-    input: '2, G, L',
-    expectedOutcome: 'YES'
-  },
-  3: {
-    input: '1, R',
+    input: '1 GRGL',
     expectedOutcome: 'YES'
   }
 }
