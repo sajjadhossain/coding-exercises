@@ -11,10 +11,10 @@ var expectedResult = {
   8: '1,0'
 };
 
-describe('is compound word', function() {
+describe('get neighbors', function() {
   var getNeighbors = require('../../getNeighbors');
 
-  it('getNeighbors(' + coordinates + ')' + ' => ' + expectedResult, function() {
+  it.skip('getNeighbors(' + coordinates + ')' + ' => ' + expectedResult, function() {
     console.log(getNeighbors(coordinates))
     // chai.assert(getNeighbors(coordinates) === expectedResult, 'Expected ' + getNeighbors(coordinates) + ' to equal ' + expectedResult);
   });
