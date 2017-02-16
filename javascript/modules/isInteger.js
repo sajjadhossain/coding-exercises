@@ -1,3 +1,4 @@
+
 // Objective: Return true or false if parameter passed is integer by JS definitions
 // TODO return no for isFloat, cause isInteger are whole numbers
 

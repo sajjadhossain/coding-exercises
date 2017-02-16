@@ -1,0 +1,7 @@
+/*
+ * jshint node:true
+ */
+
+ /**
+ * {{input}}
+ */

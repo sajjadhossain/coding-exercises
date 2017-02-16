@@ -12,20 +12,28 @@
 // i on an infinite loop will restrict the robot's movements to a circle.
 // If the instruction restricts the robot's movement to a circle,
 // set index i to "YES"; otherwise, set it to "NO".
-
-
 module.exports = {
   doesCircleExist: function(input) {
+    // Split array by space
     var inputArray = input.split(' ');
+    // A new object for commands
     var commands = {};
+    // Istantiate isCircle to return
     var isCircle;
 
+    // Loop until the input[0]
     for(var increment = 1, increment2 = 0; increment <= inputArray[0]; increment++, increment2++) {
+      // Write to commands object
       commands[increment2] = inputArray[increment];
     }
 
+    // For each command
     for(var key in commands) {
-      switch(commands[key]) {
+      // Switch case for the last 4 of the command
+      switch(commands[key].slice(-4)) {
+        case 'GLGR':
+          isCircle = 'YES';
+          break;
         case 'GRGL':
           isCircle = 'YES';
           break;

@@ -1,5 +1,6 @@
 var chai = require('chai');
 var _ = require('lodash');
+var style = require('cli-color');
 var objectsToTest = {
   1: {
     1: { a: 1, b: 2, c: 3},
@@ -20,6 +21,12 @@ var objectsToTest = {
     difference: ''
   }
 };
+
+before( function() {
+  console.log(style.green.underline('TEST DATA'));
+  console.log(JSON.stringify(objectsToTest, null, 2));
+});
+
 
 describe('do objects equal', function() {
   _.forEach(objectsToTest, function(object) {

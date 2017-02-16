@@ -1,1 +1,4 @@
-// Playground
+/*
+ * jslint node: true
+ * Playground
+ */
