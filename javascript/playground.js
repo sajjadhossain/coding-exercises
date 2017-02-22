@@ -3,6 +3,19 @@
  * Playground
  */
 
-var Bathroom = require('../generated/Bathroom');
+ var Foundation = require('./Foundation'),
+     moduleName = 'Test',
+     moduleDirectory = './generated',
+     functions = {
+         test: function (input) {
+             return input + ' tested!'
+         }
+     },
+     inputs = [ 'inputString' ]
 
-console.log(Bathroom.ask('ME', 'How are you?'));
+ Foundation.makeModule(
+     moduleName,
+     moduleDirectory,
+     functions,
+     inputs
+ );

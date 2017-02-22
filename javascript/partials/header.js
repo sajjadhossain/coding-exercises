@@ -15,7 +15,7 @@ module.exports = {
         var increment,
             top = '/*' +
                 '\n * jshint node:true' +
-                '\n */ \n',
+                '\n */\n',
             moduleName = input.moduleName,
             inputs = input.inputs,
             comments = [],
@@ -36,5 +36,15 @@ module.exports = {
             endComment;
 
         return allComments;
-    }    
+    },
+    mocha: function () {
+        'use strict';
+        var comments = '/*' +
+            '\n * jshint node:true, mocha:true' +
+            '\n */ \n',
+            chaiRequire = 'var assert = require(\'chai\').assert',
+            mochaComments = comments + chaiRequire;
+
+        return mochaComments;
+    }
 };

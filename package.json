@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha javascript/test/specs/**.js"
+    "test": "./node_modules/.bin/mocha javascript/test/specs/**.js",
+    "testModules": "./node_modules/.bin/mocha javascript/test/specs/**/compareObjects.js"
   },
   "author": "sajjad hossain",
   "license": "ISC",

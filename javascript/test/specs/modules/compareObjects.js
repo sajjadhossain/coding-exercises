@@ -1,49 +1,77 @@
-var chai = require('chai');
-var _ = require('lodash');
-var style = require('cli-color');
-var objectsToTest = {
-  1: {
-    1: { a: 1, b: 2, c: 3},
-    2: { a: 1, b: 1, c: 4},
-    result: false,
-    difference: 'b,c'
-  },
-  2: {
-    1: { a: 1, b: 2, c: 3},
-    2: { b: 2, a: 1},
-    result: false,
-    difference: 'c'
-  },
-  3: {
-    1: { a: 1, b: 2, c: 3},
-    2: { a: 1, b: 2, c: 3},
-    result: true,
-    difference: ''
-  }
-};
+/*
+ * jshint node:true, mocha:true
+ */
 
-before( function() {
-  console.log(style.green.underline('TEST DATA'));
-  console.log(JSON.stringify(objectsToTest, null, 2));
+ /**
+ * @param {sting|array|object|number|function} value1 The module name
+ * @param {sting|array|object|number|function} value2 The module directory
+ */
+
+var assert = require('chai').assert,
+    _ = require('lodash'),
+    doObjectsEqual = require('../../../modules/compareObjects').doObjectsEqual,
+    listObjectDifferences = require('../../../modules/compareObjects').listObjectDifferences,
+    listObjectDifferencesWithoutLibraries = require('../../../modules/compareObjects').listObjectDifferencesWithoutLibraries,
+    testData = [
+        {
+            1: { a: 1, b: 2, c: 3},
+            2: { a: 1, b: 1, c: 4},
+            result: false,
+            difference: 'b,c'
+        },
+        {
+            1: { a: 1, b: 2, c: 3},
+            2: { b: 2, a: 1},
+            result: false,
+            difference: 'c'
+        },
+        {
+            1: { a: 1, b: 2, c: 3},
+            2: { a: 1, b: 2, c: 3},
+            result: true,
+            difference: ''
+        }
+    ];
+
+describe('do objects equal', function () {
+    'use strict';
+    _.forEach(testData, function (value) {
+        it(
+            'doObjectsEqual(' + JSON.stringify(value[1]) + ', ' + JSON.stringify(value[2]) + ')' + ' => ' + value.result,
+            function () {
+                assert(
+                    doObjectsEqual(value[1], value[2]) === value.result,
+                    'Expected Result: ' + value.result + ' Actual Result: ' + value[1]
+                );
+            }
+        );
+    });
 });
 
-
-describe('do objects equal', function() {
-  _.forEach(objectsToTest, function(object) {
-    var doObjectsEqual = require('../../compareObjects').doObjectsEqual;
-
-    it('doObjectsEqual(' + JSON.stringify(object[1]) + ', ' + JSON.stringify(object[2]) + ')' + ' => ' + object.result, function() {
-      chai.assert(doObjectsEqual(object[1], object[2]) === object.result, 'Expected ' + doObjectsEqual(object[1], object[2]) + ' to equal ' + object.result);
+describe('list object differences', function () {
+    _.forEach(testData, function (value) {
+        'use strict';
+        it('listObjectDifferences(' + JSON.stringify(value[1]) + ', ' + JSON.stringify(value[2]) + ')' + ' => ' + value.difference,
+            function () {
+                assert(
+                    listObjectDifferences(value[1], value[2]) === value.difference,
+                    'Expected Result: ' + value.result + ' Actual Result: ' + value[1]
+                );
+            }
+        );
     });
-  });
 });
 
-describe('list object differences', function() {
-  _.forEach(objectsToTest, function(object) {
-    var listObjectDifferences = require('../../compareObjects').listObjectDifferences;
-
-    it('listObjectDifferences(' + JSON.stringify(object[1]) + ', ' + JSON.stringify(object[2]) + ')' + ' => ' + object.difference, function() {
-      chai.assert(listObjectDifferences(object[1], object[2]) === object.difference, 'Expected ' + listObjectDifferences(object[1], object[2]) + ' to equal ' + object.difference);
+describe('list object differences without libraries', function () {
+    _.forEach(testData, function (value) {
+        'use strict';
+        it('listObjectDifferencesWithoutLibraries(' + JSON.stringify(value[1]) + ', ' + JSON.stringify(value[2]) + ')' + ' => ' + value.difference,
+            function () {
+                assert(
+                    listObjectDifferencesWithoutLibraries(value[1], value[2]) === value.difference,
+                    'Expected Result: ' + value.result + ' Actual Result: ' + value[1]
+                );
+            }
+        );
     });
-  });
 });

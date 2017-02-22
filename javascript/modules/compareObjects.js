@@ -1,27 +1,50 @@
-// TODO
-// Objective 1: Return true or false if objects match
-// Objective 2: Return difference of objects passed as parameters to function
+/*
+ * jshint node:true
+ */
+ /**
+ * @param {object} object1 The module name
+ * @param {object} object2 The module directory
+ */
 
-// Using lodash for part 2 of this exercise
-var _ = require('lodash');
+'use strict';
+var _ = require('lodash'),
+    doObjectsEqual = function (object1, object2) {
+        if (object1 && object2) {
+            return JSON.stringify(object1) === JSON.stringify(object2);
+        }
+    },
+    listObjectDifferences = function (object1, object2) {
+        if (object1 && object2) {
+            var reduceToKeys = _.reduce(object1, function (result, value, key) {
+                return _.isEqual(value, object2[key]) ? result : result.concat(key);
+            }, []);
+
+            return reduceToKeys.toString();
+        }
+    },
+    listObjectDifferencesWithoutLibraries = function (object1, object2) {
+        if (object1 && object2) {
+            var key,
+                differentKeys = [];
+
+            for (key in object1) {
+                if (object1.hasOwnProperty(key)) {
+                    if (object2.hasOwnProperty(key)) {
+                        if (object1[key] !== object2[key]) {
+                            differentKeys.push(key);
+                        }
+                    } else {
+                        differentKeys.push(key);
+                    }
+                }
+            }
+
+            return differentKeys.toString();
+        }
+    };
 
 module.exports = {
-  // 1. A module that compares and returns boolean for two objects passed
-  doObjectsEqual: function(object1, object2) {
-    // Return the result from the strict equal statement
-    return JSON.stringify(object1) === JSON.stringify(object2);
-  },
-  // 2. A module that compares and returns the difference for two objects passed
-  listObjectDifferences: function(object1, object2) {
-    // Reduce the the first object
-    var reduceConcatAndReturnDifferentKey = _.reduce(object1, function(result, value, key) {
-        // Return the value from _.isEqual foreach key in the second object
-        return _.isEqual(value, object2[key]) ?
-            // Push the key to an array
-            result : result.concat(key);
-    }, []);
-
-    // Return the array of diffenciating keys as a string
-    return reduceConcatAndReturnDifferentKey.toString();
-  }
-}
+    doObjectsEqual: doObjectsEqual,
+    listObjectDifferences: listObjectDifferences,
+    listObjectDifferencesWithoutLibraries: listObjectDifferencesWithoutLibraries
+};

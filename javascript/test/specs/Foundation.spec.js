@@ -16,7 +16,7 @@ var assert = require('chai').assert,
     user2Response = 'Sure, just leave it how you see it, eh?',
     user2ResponseIfClogged = 'What the ... ?!?',
     moduleName = 'Bathroom',
-    moduleDirectory = './generated',
+    moduleDirectory = './javascript/generated',
     functions,
     use = {
         ask: function (user, question) {
@@ -74,45 +74,43 @@ var assert = require('chai').assert,
         },
         toilet: function (type) {
             'use strict';
-
             return use.flush(type);
         }
     },
     inputs = ['user', 'type', 'question', 'response'];
 
 describe('BATHROOM STORY', function () {
-    'use strict';
     var type = 4;
 
-    it.skip('use.ask(\'' + user1 + '\', \'' + user1Question + '\') => ME: Hello! May I use your bathroom?', function () {
+    it('use.ask(\'' + user1 + '\', \'' + user1Question + '\') => ME: Hello! May I use your bathroom?', function () {
         assert(
             use.ask(user1, user1Question) === 'ME: Hello! May I use your bathroom?',
             'Expected: \'ME: Hello! May I use your bathroom?\'' +
                 'Actual: ' + use.ask(user1, user1Question)
         );
     });
-    it.skip('use.reason(\'' + user1 + '\', \'' + type + '\') => ME: I need to ... I can\'t control bodily functions!', function () {
+    it('use.reason(\'' + user1 + '\', \'' + type + '\') => ME: I need to ... I can\'t control bodily functions!', function () {
         assert(
             use.reason(user1, type) === 'ME: I need to ... I can\'t control bodily functions!',
             'Expected: \'ME: I need to ... I can\'t control bodily functions!\'' +
                 'Actual: ' + use.reason(user1, type)
         );
     });
-    it.skip('use.respond(\'' + user2 + '\', \'' + user2Response + '\') => HOST: Sure, just leave it how you see it, eh?', function () {
+    it('use.respond(\'' + user2 + '\', \'' + user2Response + '\') => HOST: Sure, just leave it how you see it, eh?', function () {
         assert(
             use.respond(user2, user2Response) === 'HOST: Sure, just leave it how you see it, eh?',
             'Expected: \'HOST: Sure, just leave it how you see it, eh?\'' +
                 'Actual: ' + use.reason(user1, type)
         );
     });
-    it.skip('use.gratitude(\'' + user1 + '\') => ME: Thanks so much!', function () {
+    it('use.gratitude(\'' + user1 + '\') => ME: Thanks so much!', function () {
         assert(
             use.gratitude(user1) === 'ME: Thanks so much!',
             'Expected: \'ME: Thanks so much!\'' +
                 'Actual: ' + use.reason(user1)
         );
     });
-    it.skip('use.toilet(\'' + type + '\') => uses toilet and returns if clogged', function () {
+    it('use.toilet(\'' + type + '\') => uses toilet and returns if clogged', function () {
         assert(
             use.toilet(type) === 'clogged',
             'Expected: \'clogged\'' +
@@ -120,7 +118,7 @@ describe('BATHROOM STORY', function () {
         );
     });
     if (use.toilet(type) === 'clogged') {
-        it.skip('use.respond(\'' + user2 + '\', \'' + user2ResponseIfClogged + '\') => HOST: What the ... ?!?', function () {
+        it('use.respond(\'' + user2 + '\', \'' + user2ResponseIfClogged + '\') => HOST: What the ... ?!?', function () {
             assert(
                 use.respond(user2, user2ResponseIfClogged) === 'HOST: What the ... ?!?',
                 'Expected: \'HOST: What the ... ?!?\'' +
@@ -132,7 +130,6 @@ describe('BATHROOM STORY', function () {
 
 
 describe('Foundation', function () {
-    'use strict';
     functions = use;
 
     it('makeModule(moduleName, moduleDirectory, functions, inputs) => makes a module and test in directory passed', function () {
@@ -142,11 +139,15 @@ describe('Foundation', function () {
                 functions,
                 inputs
             );
-        // assert(
-        //     (createModule.module !== undefined && createModule.test !== undefined),
-        //     'module returned undefined'
-        // );
 
-        console.log(Foundation.writeModule(createModule))
+        assert(
+            createModule.module !== undefined,
+            'module returned undefined'
+        );
+
+        assert(
+            createModule.test !== undefined,
+            'test returned undefined'
+        );
     });
 });
