@@ -4,8 +4,8 @@
 - [x] [Do Objects Equal](./javascript/modules/compareObjects.js)
 - [x] [List Objects Differences](./javascript/modules/compareObjects.js)
 - [x] [List Objects Differences Without Libraries](./javascript/compareObjects.js)
-- [x] [Is Compound Word](./javascript/compoundWords.js)
-- [x] [List Compound Words](./javascript/compoundWords.js)
+- [x] [Is Compound Word](./javascript/modules/compoundWords.js)
+- [x] [List Compound Words](./javascript/modules/compoundWords.js)
 
 ### Tests
 - [x] [Compare Objects](./javascript/test/specs/modules/compareObjects.js)
