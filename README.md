@@ -4,12 +4,16 @@
 - [x] [Do Objects Equal](./javascript/modules/compareObjects.js)
 - [x] [List Objects Differences](./javascript/modules/compareObjects.js)
 - [x] [List Objects Differences Without Libraries](./javascript/compareObjects.js)
+- [x] [Is Compound Word](./javascript/compoundWords.js)
+- [x] [List Compound Words](./javascript/compoundWords.js)
 
 ### Tests
 - [x] [Compare Objects](./javascript/test/specs/modules/compareObjects.js)
+- [x] [Compound Words](./javascript/test/specs/modules/compoundWords.js)
 
 ### Docs
 - [x] [Compare Objects](./docs/javascript/compareObjects.md)
+- [x] [Compound Words](./docs/javascript/compoundWords.md)
 
 
 <!--- [x] [Fibonacci Looped](./javascript/fibonacciSequence.js)
