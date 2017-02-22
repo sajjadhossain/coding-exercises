@@ -1,12 +1,6 @@
 /*
  * jshint node:true, mocha:true
  */
-
- /**
- * @param {sting|array|object|number|function} value1 The module name
- * @param {sting|array|object|number|function} value2 The module directory
- */
-
 var assert = require('chai').assert,
     _ = require('lodash'),
     doObjectsEqual = require('../../../modules/compareObjects').doObjectsEqual,
@@ -35,13 +29,13 @@ var assert = require('chai').assert,
 
 describe('do objects equal', function () {
     'use strict';
-    _.forEach(testData, function (value) {
+    _.forEach(testData, function (data) {
         it(
-            'doObjectsEqual(' + JSON.stringify(value[1]) + ', ' + JSON.stringify(value[2]) + ')' + ' => ' + value.result,
+            'doObjectsEqual(' + JSON.stringify(data[1]) + ', ' + JSON.stringify(data[2]) + ')' + ' => ' + data.result,
             function () {
                 assert(
-                    doObjectsEqual(value[1], value[2]) === value.result,
-                    'Expected Result: ' + value.result + ' Actual Result: ' + value[1]
+                    doObjectsEqual(data[1], data[2]) === data.result,
+                    'Expected Result: ' + data.result + ' Actual Result: ' + data[1]
                 );
             }
         );
@@ -49,13 +43,13 @@ describe('do objects equal', function () {
 });
 
 describe('list object differences', function () {
-    _.forEach(testData, function (value) {
+    _.forEach(testData, function (data) {
         'use strict';
-        it('listObjectDifferences(' + JSON.stringify(value[1]) + ', ' + JSON.stringify(value[2]) + ')' + ' => ' + value.difference,
+        it('listObjectDifferences(' + JSON.stringify(data[1]) + ', ' + JSON.stringify(data[2]) + ')' + ' => ' + data.difference,
             function () {
                 assert(
-                    listObjectDifferences(value[1], value[2]) === value.difference,
-                    'Expected Result: ' + value.result + ' Actual Result: ' + value[1]
+                    listObjectDifferences(data[1], data[2]) === data.difference,
+                    'Expected Result: ' + data.result + ' Actual Result: ' + data[1]
                 );
             }
         );
@@ -63,13 +57,13 @@ describe('list object differences', function () {
 });
 
 describe('list object differences without libraries', function () {
-    _.forEach(testData, function (value) {
+    _.forEach(testData, function (data) {
         'use strict';
-        it('listObjectDifferencesWithoutLibraries(' + JSON.stringify(value[1]) + ', ' + JSON.stringify(value[2]) + ')' + ' => ' + value.difference,
+        it('listObjectDifferencesWithoutLibraries(' + JSON.stringify(data[1]) + ', ' + JSON.stringify(data[2]) + ')' + ' => ' + data.difference,
             function () {
                 assert(
-                    listObjectDifferencesWithoutLibraries(value[1], value[2]) === value.difference,
-                    'Expected Result: ' + value.result + ' Actual Result: ' + value[1]
+                    listObjectDifferencesWithoutLibraries(data[1], data[2]) === data.difference,
+                    'Expected Result: ' + data.result + ' Actual Result: ' + data[1]
                 );
             }
         );

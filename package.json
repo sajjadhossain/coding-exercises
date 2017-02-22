@@ -5,13 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha javascript/test/specs/**.js",
-    "testModules": "./node_modules/.bin/mocha javascript/test/specs/**/compareObjects.js"
+    "testModules": "./node_modules/.bin/mocha javascript/test/specs/**/compoundWords.js"
   },
   "author": "sajjad hossain",
   "license": "ISC",
   "dependencies": {
     "chai": "^3.5.0",
-    "cli-color": "^1.1.0",
     "jsonschema": "^1.1.1",
     "lodash": "^4.17.4",
     "mocha": "^3.2.0"

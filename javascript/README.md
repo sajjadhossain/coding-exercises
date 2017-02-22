@@ -48,7 +48,7 @@ describe('Test', function () {
     it.skip('test(inputString) => some desired output', function () {
         assert(
             Test.test(inputString) === 'expected value',
-                'Expected Result: expected output, Actual Result: actual output'
+                'Expected Result: expected output, Actual Result: ' + Test.test(inputString)
         );
     });
 });

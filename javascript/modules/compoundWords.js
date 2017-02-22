@@ -1,55 +1,52 @@
-// Objective 1: Return true or false if the word is a compound word
-// Objective 2: Return compound words from an object
+/*
+ * jshint node:true, mocha:true
+ */
+/**
+ * @param {string} word The module name
+ * @param {array} words The module directory
+ */
+'use strict';
+var isCompoundWord = function (word, words) {
+        var increment,
+            isCompound = false,
+            occurences = [];
 
-// Using lodash for part 1 & 2 of this exercise
-var _ = require('lodash');
+        for (increment = 0; increment < words.length; increment += 1) {
+            if (words.hasOwnProperty(increment)) {
+                if (word.match(words[increment]) !== null && words[increment] !== word) {
+                    occurences.push(word.match(words[increment]));
+                }
+                if (Object.keys(occurences).length > 1) {
+                    isCompound = true;
+                }
+            }
+        }
+
+        return isCompound;
+    },
+    returnCompoundWords = function (word, words) {
+        var increment,
+            compoundWords,
+            occurences = [];
+
+        for (increment = 0; increment < words.length; increment += 1) {
+            if (words.hasOwnProperty(increment)) {
+                if (word.match(words[increment]) !== null && words[increment] !== word) {
+                    occurences.push(word.match(words[increment]));
+                }
+            }
+        }
+
+        if (occurences.length > 1) {
+            compoundWords = occurences.toString();
+        } else {
+            compoundWords = '';
+        }
+
+        return compoundWords;
+    };
 
 module.exports = {
-  isCompoundWord: function(word, words) {
-    // Set to false
-    var isCompound = false;
-    // Construct an object
-    var occurances = {};
-
-    // For each words passed
-    _.forEach(words, function(value, key) {
-      if (word.match(value) !== null && value !== word) {
-        // Set the value to the array returned from .match()
-        occurances[key] = word.match(value);
-      }
-
-      // If occurances.legnth is greater than 2 and the value from the dictionary is not the word passed with the function
-      if (Object.keys(occurances).length > 1 && value !== word) {
-        // Set isCompound to true
-        isCompound = true;
-      }
-    });
-
-    return isCompound;
-  },
-  returnCompoundWords: function(word, words) {
-    // Construct an array
-    var compoundWords = [];
-    // Construct an object
-    var occurances = {};
-
-    // For each words passed
-    _.forEach(words, function(value, key) {
-      if (word.match(value) != null && value != word) {
-        // Set the value to the array returned from .match()
-        occurances[key] = word.match(value);
-        // Push the word the compoundWords array
-        compoundWords.push(occurances[key][0]);
-      }
-    });
-
-    // If the compoundWords.length is greater than 1
-    if (compoundWords.length > 1) {
-      // return the array as a string
-      return compoundWords.toString();
-    } else {
-      // else return an empty string
-      return '';
-    }
-  }
-}
+    isCompoundWord: isCompoundWord,
+    returnCompoundWords: returnCompoundWords
+};

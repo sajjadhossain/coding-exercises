@@ -1,69 +1,77 @@
-var chai = require('chai');
-var _ = require('lodash');
-var wordsToTest = [
-  {
-    input: 'shut',
-    result: false,
-    words: ''
-  },
-  {
-    input: 'shutter',
-    result: false,
-    words: ''
-  },
-  {
-    input: 'stock',
-    result: false,
-    words: ''
-  },
-  {
-    input: 'shutterstock',
-    result: true,
-    words: 'shut,shutter,stock'
-  },
-  {
-    input: 'snap',
-    result: false,
-    words: ''
-  },
-  {
-    input: 'chat',
-    result: false,
-    words: ''
-  },
-  {
-    input: 'snapchat',
-    result: true,
-    words: 'snap,chat'
-  }
-];
+var assert = require('chai').assert,
+    _ = require('lodash'),
+    compoundWords = require('../../../modules/compoundWords'),
+    isCompoundWord = compoundWords.isCompoundWord,
+    returnCompoundWords = compoundWords.returnCompoundWords,
+    testData = [
+        {
+            input: 'shut',
+            result: false,
+            words: ''
+        },
+        {
+            input: 'shutter',
+            result: false,
+            words: ''
+        },
+        {
+            input: 'stock',
+            result: false,
+            words: ''
+        },
+        {
+            input: 'shutterstock',
+            result: true,
+            words: 'shut,shutter,stock'
+        },
+        {
+            input: 'snap',
+            result: false,
+            words: ''
+        },
+        {
+            input: 'chat',
+            result: false,
+            words: ''
+        },
+        {
+            input: 'snapchat',
+            result: true,
+            words: 'snap,chat'
+        }
+    ],
+    dictionary;
 
 describe('is compound word', function() {
-  var isCompoundWord = require('../../compoundWords').isCompoundWord;
-  var words = [];
+    dictionary = [];
 
-  _.forEach(wordsToTest, function (word) {
-    words.push(word.input);
-  });
-
-  _.forEach(wordsToTest, function(word) {
-    it('isCompoundWord(' + word.input + ')' + ' => ' + word.result, function() {
-      chai.assert(isCompoundWord(word.input, words) === word.result, 'Expected ' + isCompoundWord(word.input, words) + ' to equal ' + word.result);
+    _.forEach(testData, function (data) {
+        dictionary.push(data.input);
     });
-  });
+
+    _.forEach(testData, function(data) {
+        it('isCompoundWord(' + data.input + ', [' + dictionary + '])' + ' => ' + data.result, function () {
+              assert(
+                  isCompoundWord(data.input, dictionary) === data.result,
+                  'Expected Result:' + data.result + ' Actual Result: ' +isCompoundWord(data.input, dictionary)
+              );
+        });
+    });
 });
 
 describe('return compound words', function() {
-  var returnCompoundWords = require('../../compoundWords').returnCompoundWords;
-  var words = [];
+    dictionary = [];
 
-  _.forEach(wordsToTest, function (word) {
-    words.push(word.input);
-  });
-
-  _.forEach(wordsToTest, function(word) {
-    it('returnCompoundWords(' + word.input + ')' + ' => ' + word.words, function() {
-      chai.assert(returnCompoundWords(word.input, words) === word.words, 'Expected ' + returnCompoundWords(word.input, words) + ' to equal ' + word.words);
+    _.forEach(testData, function (data) {
+        dictionary.push(data.input);
     });
-  });
+
+    _.forEach(testData, function(data) {
+        it('returnCompoundWords(' + data.input + ', [' + dictionary + '])' + ' => ' + data.words, function () {
+            assert(
+                returnCompoundWords(data.input, dictionary) === data.words,
+                'Expected Result:' + data.words + ' Actual Result: ' + returnCompoundWords(data.input, dictionary)
+            );
+        });
+    });
 });
