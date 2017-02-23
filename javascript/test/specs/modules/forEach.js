@@ -13,10 +13,10 @@ var assert = require('chai').assert,
         'test'
     ];
 
-describe('for each', function() {
-    _.forEach(testData, function(data, key) {
-        it('forEach(' + data + ')' + ' => ' + data, function() {
-            forEach(data, function(collection, key, value) {
+describe('for each', function () {
+    _.forEach(testData, function (data, key) {
+        it('forEach(' + data + ')' + ' => ' + data, function () {
+            forEach(data, function (collection, key, value) {
                 return assert(
                     collection === data[key],
                     'Expected Result: ' + collection + ' Actual Result: ' + data[key]

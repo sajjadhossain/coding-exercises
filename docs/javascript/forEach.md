@@ -14,7 +14,7 @@ I'm choosing to complete these exercised using modules for each objective. Then 
 
 ### <div id="Objective-1">Objective 1</div>
 #### The test
-See the test [here](../../javascript/modules/test/specs/forEach.js).
+See the test [here](../../javascript/test/specs/modules/forEach.js).
 
 ```js
 // test/specs/forEach.js
@@ -46,7 +46,7 @@ describe('for each', function() {
 #### The test explained
 We have `testData`. An array of values. Each value is different.
 
-We created a module and exported a function called `forEach`. Using mocha, chai we assert that when I pass `forEach` anything but a function, returns a callback function against key and values. We looped using `lodash`.
+We created a module and exported a function called `forEach`. Using mocha, chai we assert that when I pass `forEach` anything but a function, it returns a callback function against key and values. We looped using `lodash`.
 
 #### The module
 See the code [here](../../javascript/modules/forEach.js).

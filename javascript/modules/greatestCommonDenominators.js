@@ -1,44 +1,47 @@
-var GCDOfTwo = function(x, y) {
-  if ((typeof x !== 'number') || (typeof y !== 'number'))
-    return false;
+/*
+* jshint node:true
+*/
+/**
+* @param {array} input an array of numbers
+*/
+'use strict';
+var temporaryInteger,
+    greatestCommonDenominator,
+    absoluteX,
+    absoluteY,
+    ofTwo = function (x, y) {
+        absoluteX = Math.abs(x);
+        absoluteY =  Math.abs(y);
 
-  x = Math.abs(x);
-  y = Math.abs(y);
+        while (absoluteY) {
+            temporaryInteger = absoluteY;
+            absoluteY = absoluteX % absoluteY;
+            absoluteX = temporaryInteger;
+        }
 
-  while(y) {
-    var t = y;
-    y = x % y;
-    x = t;
-  }
+        greatestCommonDenominator = absoluteX;
 
-  return x;
+        return greatestCommonDenominator;
+    };
+
+module.exports = function (input) {
+    var first,
+        second,
+        increment;
+
+    if (input.length === 2) {
+        return ofTwo(input[0], input[1]);
+    }
+    if (input.length > 2) {
+        first = input[0];
+
+        for (increment = 1; increment < input.length; increment += 1) {
+            second = input[increment];
+            first = ofTwo(first, second);
+        }
+
+        greatestCommonDenominator = first;
+
+        return greatestCommonDenominator;
+    }
 };
-
-var GCDOfMoreThanTwo = function(input) {
-  if(toString.call(input) !== "[object Array]")
-        return  false;
-
-  var length;
-  var a;
-  var b;
-
-	length = input.length;
-
-	if (!length) {
-		return null;
-	}
-
-	a = input[0];
-
-	for(var increment = 1; increment < length; increment++) {
-		b = input[increment];
-		a = GCDOfTwo(a, b);
-	}
-
-	return a;
-}
-
-module.exports = {
-  ofTwo: GCDOfTwo,
-  ofMoreThanTwo: GCDOfMoreThanTwo
-}
