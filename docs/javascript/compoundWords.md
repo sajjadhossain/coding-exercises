@@ -83,7 +83,7 @@ describe('is compound word', function() {
 });
 ```
 #### The test explained
-We have `testData`. An array of objects that each contain a word and a boolean.
+We have `testData`. An array of objects that each contain a word and an array of words that make up the word.
 
 We created a module and exported a function called `isCompoundWord`. Using mocha, chai we assert that when I pass `isCompoundWord` a word and array of words, it returns the expected result boolean from `testData`, for each data set. We looped using `lodash`.
 
