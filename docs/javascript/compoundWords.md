@@ -118,7 +118,7 @@ Istantiate a variable to increment, set `isCompound` to false. For each word in 
 
 ### <div id="Objective-2">Objective 2</div>
 #### The test
-See the test [here](../../javascript/modules/compoundWords).
+See the test [here](../../javascript/test/specs/modules/compoundWords.js).
 
 ```js
 // test/specs/compoundWords.js

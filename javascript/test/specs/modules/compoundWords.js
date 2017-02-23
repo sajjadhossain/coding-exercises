@@ -53,7 +53,7 @@ describe('is compound word', function() {
         it('isCompoundWord(' + data.input + ', [' + dictionary + '])' + ' => ' + data.result, function () {
               assert(
                   isCompoundWord(data.input, dictionary) === data.result,
-                  'Expected Result:' + data.result + ' Actual Result: ' +isCompoundWord(data.input, dictionary)
+                  'Expected Result:' + data.result + ' Actual Result: ' + isCompoundWord(data.input, dictionary)
               );
         });
     });
