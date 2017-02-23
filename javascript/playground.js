@@ -1,4 +1,0 @@
-/*
- * jslint node: true
- * Playground
- */
