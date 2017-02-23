@@ -12,11 +12,8 @@
 - [x] [Find Average](./javascript/modules/findAverage.js)
 - [x] [For Each](./javascript/modules/forEach.js)
 - [x] [Greatest Common Denominator](./javascript/modules/greatestCommonDenominators.js)
+- [x] [Is Integer](./javascript/modules/isInteger.js)
 
-
-<!--- [x] [Is Integer](./javascript/modules/isInteger.js)
-- [x] [Is Integer Without Methods](./javascript/modules/isInteger.js)
---> 
 ### Tests
 - [x] [Compare Objects](./javascript/test/specs/modules/compareObjects.js)
 - [x] [Compound Words](./javascript/test/specs/modules/compoundWords.js)
@@ -25,8 +22,7 @@
 - [x] [Find Average](./javascript/test/specs/modules/findAverage.js)
 - [x] [For Each](./javascript/test/specs/modules/forEach.js)
 - [x] [Greatest Common Denominator](./javascript/test/specs/modules/greatestCommonDenominators.js)
-
-<!--- [x] [Is Integer](./javascript/test/specs/modules/isInteger.js)-->
+- [x] [Is Integer](./javascript/test/specs/modules/isInteger.js)
 
 ### Docs
 - [x] [Compare Objects](./docs/javascript/compareObjects.md)
@@ -36,9 +32,7 @@
 - [x] [Find Average](./docs/javascript/findAverage.md)
 - [x] [For Each](./docs/javascript/forEach.md)
 - [x] [Greatest Common Denominator](./docs/javascript/greatestCommonDenominators.md)
-
-
-<!--- [x] [Is Integer](./docs/javascript/isInteger.js)-->
+- [x] [Is Integer](./docs/javascript/isInteger.js)
 
 
 <!--
