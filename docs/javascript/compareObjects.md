@@ -28,7 +28,7 @@ Complete [Objective 2](#Objective-2) without using libraries.
 [Read more on Objective 3.B...](#Objective-3.B)
 
 ## The Functions
-I'm choosing to complete these exercised using modules for each objective. Then calling the function in a spec file. TDD if you will. I'll start with tests, then the modules.
+I'm choosing to complete these exercise using modules for each objective. Then calling the function in a spec file. TDD if you will. I'll start with tests, then the modules.
 
 ### <div id="Objective-1">Objective 1</div>
 #### The test
