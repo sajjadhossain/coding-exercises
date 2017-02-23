@@ -50,7 +50,7 @@ describe('find averages', function () {
 });
 ```
 #### The test explained
-We have `testData`. An array of objects. Each object contains a set of numebrs and the average.
+We have `testData`. An array of objects. Each object contains a set of numbers and the average.
 
 We created a module and exported a function called `findAverage`. Using mocha, chai we assert that when I pass `findAverage` an array of numbers, it returns the average integer from `testData`, for each data set. We looped using `lodash`.
 
@@ -74,4 +74,4 @@ module.exports = function (numbers) {
 };
 ```
 #### The code explained
-Istantiate a variable called `total`. In our loop we add each integer to the total. Then return our average which is `total` divided by the length of the array passed.
+Instantiate a variable called `total`. In our loop we add each integer to the total. Then return our average, which is `total` divided by the length of the array passed.

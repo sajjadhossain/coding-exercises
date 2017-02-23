@@ -10,6 +10,8 @@
 - [x] [Fibonacci Looped](./javascript/modules/fibonacciSequence.js)
 - [x] [Fibonacci Recursive](./javascript/modules/fibonacciSequence.js)
 - [x] [Find Average](./javascript/modules/findAverage.js)
+- [x] [For Each](./javascript/modules/forEach.js)
+
 
 <!--- [x] [Is Integer](./javascript/modules/isInteger.js)
 - [x] [Is Integer Without Methods](./javascript/modules/isInteger.js)
@@ -20,6 +22,7 @@
 - [x] [Count Duplicates](./javascript/test/specs/modules/countDuplicates.js)
 - [x] [Fibonacci Sequence](./javascript/test/specs/modules/fibonacciSequence.js)
 - [x] [Find Average](./javascript/test/specs/modules/findAverage.js)
+- [x] [For Each](./javascript/test/specs/modules/forEach.js)
 
 <!--- [x] [Is Integer](./javascript/test/specs/modules/isInteger.js)-->
 
@@ -29,6 +32,8 @@
 - [x] [Count Duplicates](./docs/javascript/countDuplicates.md)
 - [x] [Fibonacci Sequence](./docs/javascript/fibonacciSequence.md)
 - [x] [Find Average](./docs/javascript/findAverage.md)
+- [x] [For Each](./docs/javascript/forEach.js)
+
 
 <!--- [x] [Is Integer](./docs/javascript/isInteger.js)-->
 
