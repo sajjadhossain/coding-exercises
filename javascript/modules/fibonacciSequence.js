@@ -2,7 +2,7 @@
  * jshint node:true
  */
  /**
- * @param {object} number Index to find fibonacci value for
+ * @param {number} number Index to find fibonacci value for
  */
 var recursiveFibonacci = function (number) {
         if (number <= 2) {

@@ -1,17 +1,20 @@
-// Objective: Return average of all numbers passed
+/*
+ * jshint node:true
+ */
+/**
+ * @param {array} numbers Array of number to find average of
+ */
+'use strict';
+module.exports = function (numbers) {
+    var total = 0,
+        increment,
+        average;
 
-// A module that returns the average of all numbers passed in an object
-module.exports = function findAverage(numbers) {
-  // Set total to 0
-  var total = 0;
-  // For each number in the array
-  for(var i = 0; i < numbers.length; i++) {
-      // return an auto incremented total
-      total += numbers[i];
-  }
+    for (increment = 0; increment < numbers.length; increment += 1) {
+        total += numbers[increment];
+    }
 
-  // Average equals total divided by the legnth of the array
-  var average = total / numbers.length;
+    average = total / numbers.length;
 
-  return average;
+    return average;
 };

@@ -85,7 +85,7 @@ This is simple as well. Base case: return 1, if `index` is less than 2. Else ret
 
 ### <div id="Objective-2">Objective 2</div>
 #### The test
-See the test [here](../../javascript/test/specsmodules/fibonacciSequence.js).
+See the test [here](../../javascript/test/specs/modules/fibonacciSequence.js).
 
 ```js
 // test/specs/fibonacciSequence.js

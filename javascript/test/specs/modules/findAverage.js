@@ -1,26 +1,31 @@
-var chai = require('chai');
-var _ = require('lodash');
-var setsToTest = {
-  1: {
-    'numbers': [1,2,3,4,5,6,7,8,10],
-    'average': 5.111111111111111
-  },
-  2: {
-    'numbers': [1,2,3,4,5],
-    'average': 3
-  },
-  3: {
-    'numbers':  [1,1,1],
-    'average': 1
-  }
-};
+/*
+* jshint node:true, mocha:true
+*/
+var assert = require('chai').assert,
+    _ = require('lodash'),
+    findAverage = require('../../../modules/findAverage'),
+    testData = [
+        {
+            'numbers': [1,2,3,4,5,6,7,8,10],
+            'average': 5.111111111111111
+        },
+        {
+            'numbers': [1,2,3,4,5],
+            'average': 3
+        },
+        {
+            'numbers':  [1,1,1],
+            'average': 1
+        }
+    ];
 
-describe('find averages', function() {
-  _.forEach(setsToTest, function(set) {
-    var findAverage = require('../../findAverage');
-
-    it('findAverage(' + set.numbers.toString() + ')' + ' => ' + set.average, function() {
-      chai.assert(findAverage(set.numbers) === set.average, 'Expected ' + findAverage(set.numbers) + ' to equal ' + set.average)
+describe('find averages', function () {
+    _.forEach(testData, function (data) {
+        it('testData(' + data.numbers.toString() + ')' + ' => ' + data.average, function() {
+            assert(
+                findAverage(data.numbers) === data.average,
+                'Expected Result: ' + findAverage(data.numbers) + ' Actual Result: ' + data.average
+            );
+        });
     });
-  });
 });

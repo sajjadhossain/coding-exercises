@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha javascript/test/specs/**.js",
-    "test:modules": "./node_modules/.bin/mocha javascript/test/specs/**/fibonacciSequence.js"
+    "test:modules": "./node_modules/.bin/mocha javascript/test/specs/**/findAverage.js"
   },
   "author": "sajjad hossain",
   "license": "ISC",

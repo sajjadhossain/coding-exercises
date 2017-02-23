@@ -9,18 +9,29 @@
 - [x] [Count Duplicates](./javascript/modules/countDuplicates.js)
 - [x] [Fibonacci Looped](./javascript/modules/fibonacciSequence.js)
 - [x] [Fibonacci Recursive](./javascript/modules/fibonacciSequence.js)
+- [x] [Find Average](./javascript/modules/findAverage.js)
 
+<!--- [x] [Is Integer](./javascript/modules/isInteger.js)
+- [x] [Is Integer Without Methods](./javascript/modules/isInteger.js)
+--> 
 ### Tests
 - [x] [Compare Objects](./javascript/test/specs/modules/compareObjects.js)
 - [x] [Compound Words](./javascript/test/specs/modules/compoundWords.js)
 - [x] [Count Duplicates](./javascript/test/specs/modules/countDuplicates.js)
 - [x] [Fibonacci Sequence](./javascript/test/specs/modules/fibonacciSequence.js)
+- [x] [Find Average](./javascript/test/specs/modules/findAverage.js)
+
+<!--- [x] [Is Integer](./javascript/test/specs/modules/isInteger.js)-->
 
 ### Docs
 - [x] [Compare Objects](./docs/javascript/compareObjects.md)
 - [x] [Compound Words](./docs/javascript/compoundWords.md)
 - [x] [Count Duplicates](./docs/javascript/countDuplicates.md)
 - [x] [Fibonacci Sequence](./docs/javascript/fibonacciSequence.md)
+- [x] [Find Average](./docs/javascript/findAverage.md)
+
+<!--- [x] [Is Integer](./docs/javascript/isInteger.js)-->
+
 
 <!--
 - [x] [Reverse String by Letter](./javascript/reverseString.js)
