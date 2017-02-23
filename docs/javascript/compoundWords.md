@@ -21,7 +21,7 @@ Write a function that takes a word and an array of words as input and returns th
 [Read more on Objective 2...](#Objective-2)
 
 ## The Functions
-I'm choosing to complete these exercised using modules for each objective. Then calling the function in a spec file. TDD if you will. I'll start with tests, then the modules.
+I'm choosing to complete these exercise using modules for each objective. Then calling the function in a spec file. TDD if you will. I'll start with tests, then the modules.
 
 ### <div id="Objective-1">Objective 1</div>
 #### The test
