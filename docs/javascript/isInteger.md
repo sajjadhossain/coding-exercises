@@ -76,4 +76,4 @@ module.exports = function (number) {
 };
 ```
 #### The code explained
-Simply return the boolean from javascripts `isInteger` method. You can also return `number % 1 === 0`.
+Simply return the boolean from the `isInteger` method. You can also return `number % 1 === 0`.

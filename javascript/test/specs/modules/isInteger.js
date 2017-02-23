@@ -5,7 +5,7 @@ var assert = require('chai').assert,
     _ = require('lodash'),
     isInteger = require('../../../modules/isInteger').isInteger,
     isIntegerWithoutMethods = require('../../../modules/isInteger').isIntegerWithoutMethods,
-    valuesToTest = [
+    testData = [
         {
             'input': NaN,
             'result': false
@@ -32,23 +32,23 @@ var assert = require('chai').assert,
         }
     ];
 
-describe('is integer', function() {
-    _.forEach(valuesToTest, function(value) {
-        it('isInteger(' + value.input + ')' + ' => ' + value.result, function() {
+describe('is integer', function () {
+    _.forEach(testData, function (data) {
+        it('isInteger(' + data.input + ')' + ' => ' + data.result, function() {
             assert(
-                isInteger(value.input) === value.result,
-                'Expected Result: ' + value.result + ' Assert Result: ' + isInteger(value.input)
+                isInteger(data.input) === data.result,
+                'Expected Result: ' + data.result + ' Assert Result: ' + isInteger(data.input)
             );
         });
     });
 });
 
-describe('is integer without methods', function() {
-    _.forEach(valuesToTest, function(value) {
-        it('isIntegerWithoutMethods(' + value.input + ')' + ' => ' + value.result, function() {
+describe('is integer without methods', function () {
+    _.forEach(testData, function (data) {
+        it('isIntegerWithoutMethods(' + data.input + ')' + ' => ' + data.result, function() {
             assert(
-                isIntegerWithoutMethods(value.input) === value.result,
-                'Expected Result: ' + value.result + ' Assert Result: ' + isIntegerWithoutMethods(value.input)
+                isIntegerWithoutMethods(data.input) === data.result,
+                'Expected Result: ' + data.result + ' Assert Result: ' + isIntegerWithoutMethods(data.input)
             );
         });
     });

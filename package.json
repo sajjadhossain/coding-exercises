@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha javascript/test/specs/**.js",
-    "test:modules": "./node_modules/.bin/mocha javascript/test/specs/**/isInteger.js"
+    "test:modules": "./node_modules/.bin/mocha javascript/test/specs/**/isPrimeNumber.js"
   },
   "author": "sajjad hossain",
   "license": "ISC",

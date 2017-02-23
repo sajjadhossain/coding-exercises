@@ -13,6 +13,8 @@
 - [x] [For Each](./javascript/modules/forEach.js)
 - [x] [Greatest Common Denominator](./javascript/modules/greatestCommonDenominators.js)
 - [x] [Is Integer](./javascript/modules/isInteger.js)
+- [x] [Is Integer Without Methods](./javascript/modules/isInteger.js)
+- [x] [Is Prime Number](./javascript/modules/isPrimeNumber.js)
 
 ### Tests
 - [x] [Compare Objects](./javascript/test/specs/modules/compareObjects.js)
@@ -23,6 +25,7 @@
 - [x] [For Each](./javascript/test/specs/modules/forEach.js)
 - [x] [Greatest Common Denominator](./javascript/test/specs/modules/greatestCommonDenominators.js)
 - [x] [Is Integer](./javascript/test/specs/modules/isInteger.js)
+- [x] [Is Prime Number](./javascript/test/specs/modules/isPrimeNumber.js)
 
 ### Docs
 - [x] [Compare Objects](./docs/javascript/compareObjects.md)
@@ -33,6 +36,7 @@
 - [x] [For Each](./docs/javascript/forEach.md)
 - [x] [Greatest Common Denominator](./docs/javascript/greatestCommonDenominators.md)
 - [x] [Is Integer](./docs/javascript/isInteger.js)
+- [x] [Is Prime Number](./docs/javascript/isPrimeNumber.js)
 
 
 <!--
