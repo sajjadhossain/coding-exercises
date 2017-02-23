@@ -6,14 +6,18 @@
 - [x] [List Objects Differences Without Libraries](./javascript/compareObjects.js)
 - [x] [Is Compound Word](./javascript/modules/compoundWords.js)
 - [x] [List Compound Words](./javascript/modules/compoundWords.js)
+- [x] [Count Duplicates](./javascript/modules/countDuplicates.js)
 
 ### Tests
 - [x] [Compare Objects](./javascript/test/specs/modules/compareObjects.js)
 - [x] [Compound Words](./javascript/test/specs/modules/compoundWords.js)
+- [x] [Count Duplicates](./javascript/test/specs/modules/countDuplicates.js)
+
 
 ### Docs
 - [x] [Compare Objects](./docs/javascript/compareObjects.md)
 - [x] [Compound Words](./docs/javascript/compoundWords.md)
+- [x] [Count Duplicates](./docs/javascript/countDuplicates.md)
 
 
 <!--- [x] [Fibonacci Looped](./javascript/fibonacciSequence.js)

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha javascript/test/specs/**.js",
-    "testModules": "./node_modules/.bin/mocha javascript/test/specs/**/compoundWords.js"
+    "testModules": "./node_modules/.bin/mocha javascript/test/specs/**/countDuplicates.js"
   },
   "author": "sajjad hossain",
   "license": "ISC",

@@ -32,7 +32,7 @@ I'm choosing to complete these exercised using modules for each objective. Then 
 
 ### <div id="Objective-1">Objective 1</div>
 #### The test
-See the test [here](../../javascript/modules/compareObjects.js).
+See the test [here](../../javascript/test/specs/modules/compareObjects.js).
 
 ```js
 // test/specs/compareObjects.js

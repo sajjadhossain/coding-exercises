@@ -2,8 +2,8 @@
  * jshint node:true
  */
  /**
- * @param {object} object1 The module name
- * @param {object} object2 The module directory
+ * @param {object} object1 object 1
+ * @param {object} object2 compare to object 2
  */
 
 'use strict';

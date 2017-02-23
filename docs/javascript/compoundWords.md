@@ -25,7 +25,7 @@ I'm choosing to complete these exercised using modules for each objective. Then 
 
 ### <div id="Objective-1">Objective 1</div>
 #### The test
-See the test [here](../../javascript/modules/compoundWords).
+See the test [here](../../javascript/test/specs/modules/compoundWords.js).
 
 ```js
 // test/specs/compoundWords.js
@@ -98,13 +98,13 @@ module.exports = {
     isCompoundWord = function (word, words) {
         var increment,
             isCompound = false,
-            occurances = [];
+            occurences = [];
 
         for (increment = 0; increment < words.length; increment += 1) {
             if (word.match(words[increment]) !== null && words[increment] !== word) {
-                occurances.push(word.match(words[increment]));
+                occurences.push(word.match(words[increment]));
             }
-            if (Object.keys(occurances).length > 1) {
+            if (Object.keys(occurences).length > 1) {
                 isCompound = true;
             }
         }
@@ -114,7 +114,7 @@ module.exports = {
 };
 ```
 #### The code explained
-Istantiate a variable to increment, set `isCompound` to false. For each word in the dictionary, if `word` matches the `word` in the dictionary, and if the `word` is not an instance of itself, push it to `occurances`. If the length of occurances is greater than 2, then `isCompound = true`.
+Istantiate a variable to increment, set `isCompound` to false. For each word in the dictionary, if `word` matches the `word` in the dictionary, and if the `word` is not an instance of itself, push it to `occurences`. If the length of occurences is greater than 2, then `isCompound = true`.
 
 ### <div id="Objective-2">Objective 2</div>
 #### The test
@@ -191,18 +191,18 @@ module.exports = {
     returnCompoundWords = function (word, words) {
         var increment,
             compoundWords,
-            occurances = [];
+            occurences = [];
 
         for (increment = 0; increment < words.length; increment += 1) {
             if (words.hasOwnProperty(increment)) {
                 if (word.match(words[increment]) !== null && words[increment] !== word) {
-                    occurances.push(word.match(words[increment]));
+                    occurences.push(word.match(words[increment]));
                 }
             }
         }
 
-        if (occurances.length > 1) {
-            compoundWords = occurances.toString();
+        if (occurences.length > 1) {
+            compoundWords = occurences.toString();
         } else {
             compoundWords = '';
         }
@@ -212,4 +212,4 @@ module.exports = {
 };
 ```
 #### The code explained
-Istantiate a variable to increment, set `isCompound` to false. For each word in the dictionary, if `word` matches the `word` in the dictionary, and if the `word` is not an instance of itself, push it to `occurances`. If the length of occurances is greater than 2, then return the occurrences.
+Istantiate a variable to increment, set `isCompound` to false. For each word in the dictionary, if `word` matches the `word` in the dictionary, and if the `word` is not an instance of itself, push it to `occurences`. If the length of occurences is greater than 2, then return the occurrences.

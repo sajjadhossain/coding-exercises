@@ -2,8 +2,8 @@
  * jshint node:true, mocha:true
  */
 /**
- * @param {string} word The module name
- * @param {array} words The module directory
+ * @param {string} word The word under test`
+ * @param {array} words An array of words, dictionary
  */
 'use strict';
 var isCompoundWord = function (word, words) {
