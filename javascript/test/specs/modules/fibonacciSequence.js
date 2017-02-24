@@ -24,7 +24,7 @@ describe('recursive fibonacci sequence', function () {
         it('recursiveFibonacci(' + key + ')' + ' => ' + data, function () {
             assert(
                 recursiveFibonacci(key) === data,
-                'Expected Result: ' + data + ' Actual Result: ' + recursiveFibonacci(key)
+                '\n     Expected Result: ' + data + '\n     Actual Result: ' + recursiveFibonacci(key)
             );
         })
     });
@@ -35,7 +35,7 @@ describe('looped fibonacci sequence', function () {
         it('loopedFibonacci(' + key + ')' + ' => ' + data, function () {
             assert(
                 loopedFibonacci(key) === data,
-                'Expected Result: ' + data + ' Actual Result: ' + loopedFibonacci(key)
+                '\n     Expected Result: ' + data + '\n     Actual Result: ' + loopedFibonacci(key)
             );
         })
     });

@@ -35,7 +35,7 @@ describe('do objects equal', function () {
             function () {
                 assert(
                     doObjectsEqual(data[1], data[2]) === data.result,
-                    'Expected Result: ' + data.result + ' Actual Result: ' + data[1]
+                    '\n     Expected Result: ' + data.result + '\n     Actual Result: ' + data[1]
                 );
             }
         );
@@ -49,7 +49,7 @@ describe('list object differences', function () {
             function () {
                 assert(
                     listObjectDifferences(data[1], data[2]) === data.difference,
-                    'Expected Result: ' + data.result + ' Actual Result: ' + data[1]
+                    '\n     Expected Result: ' + data.result + '\n     Actual Result: ' + data[1]
                 );
             }
         );
@@ -63,7 +63,7 @@ describe('list object differences without libraries', function () {
             function () {
                 assert(
                     listObjectDifferencesWithoutLibraries(data[1], data[2]) === data.difference,
-                    'Expected Result: ' + data.result + ' Actual Result: ' + data[1]
+                    '\n     Expected Result: ' + data.result + '\n     Actual Result: ' + data[1]
                 );
             }
         );

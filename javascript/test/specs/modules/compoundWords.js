@@ -53,7 +53,7 @@ describe('is compound word', function() {
         it('isCompoundWord(' + data.input + ', [' + dictionary + '])' + ' => ' + data.result, function () {
               assert(
                   isCompoundWord(data.input, dictionary) === data.result,
-                  'Expected Result:' + data.result + ' Actual Result: ' + isCompoundWord(data.input, dictionary)
+                  'Expected Result:' + data.result + '\n     Actual Result: ' + isCompoundWord(data.input, dictionary)
               );
         });
     });
@@ -70,7 +70,7 @@ describe('return compound words', function() {
         it('returnCompoundWords(' + data.input + ', [' + dictionary + '])' + ' => ' + data.words, function () {
             assert(
                 returnCompoundWords(data.input, dictionary) === data.words,
-                'Expected Result:' + data.words + ' Actual Result: ' + returnCompoundWords(data.input, dictionary)
+                'Expected Result:' + data.words + '\n     Actual Result: ' + returnCompoundWords(data.input, dictionary)
             );
         });
     });

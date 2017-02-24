@@ -1,8 +1,8 @@
 /*
  * jshint node:true, mocha:true
- */
+ */ 
 var assert = require('chai').assert
-    , Bathroom = require('../../Bathroom');
+    , Bathroom = require('../../Bathroom'); 
 
 describe('Bathroom', function () {
     it.skip('ask(user,type,question,response) => some desired output', function () {

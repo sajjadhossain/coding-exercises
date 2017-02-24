@@ -24,7 +24,7 @@ describe('for each', function () {
         it('greatestCommonDenominatorOfTwo(' + data.input + ')' + ' => ' + data.input, function () {
             assert(
                 greatestCommonDenominator(data.input) === data.output,
-                'Expected Result: ' + data.output + ' Actual Result: ' + greatestCommonDenominator(data.input)
+                '\n     Expected Result: ' + data.output + '\n     Actual Result: ' + greatestCommonDenominator(data.input)
             );
         });
     });

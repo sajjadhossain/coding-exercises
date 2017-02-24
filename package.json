@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha javascript/test/specs/**.js",
-    "test:modules": "./node_modules/.bin/mocha javascript/test/specs/**/isPrimeNumber.js"
+    "test": "npm run test:foundation && npm run test:modules",
+    "test:foundation": "./node_modules/.bin/mocha javascript/test/specs/**.js",
+    "test:modules": "./node_modules/.bin/mocha javascript/test/specs/modules/**.js",
+    "test:algorithms": "./node_modules/.bin/mocha javascript/test/specs/algorithms/**.js"
   },
   "author": "sajjad hossain",
   "license": "ISC",

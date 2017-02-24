@@ -19,7 +19,7 @@ describe('for each', function () {
             forEach(data, function (collection, key, value) {
                 return assert(
                     collection === data[key],
-                    'Expected Result: ' + collection + ' Actual Result: ' + data[key]
+                    '\n     Expected Result: ' + collection + '\n     Actual Result: ' + data[key]
                 );
             });
         });

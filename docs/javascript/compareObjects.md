@@ -10,7 +10,7 @@ Write a function that takes two objects as an input and returns if objects match
 [Read more on Objective 1...](#Objective-1)
 
 ### Objective 2 
-Write a function that takes two objects as an input and returns the keys for differences between the objects.
+Write a function the takes two objects as an input and returns the keys for differences between the objects.
 
 **Input example** = `{ a: 1, b: 2, c: 3}, { a: 1, b: 1, c: 4}`
 

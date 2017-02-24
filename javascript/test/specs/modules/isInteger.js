@@ -37,7 +37,7 @@ describe('is integer', function () {
         it('isInteger(' + data.input + ')' + ' => ' + data.result, function() {
             assert(
                 isInteger(data.input) === data.result,
-                'Expected Result: ' + data.result + ' Assert Result: ' + isInteger(data.input)
+                '\n     Expected Result: ' + data.result + ' Assert Result: ' + isInteger(data.input)
             );
         });
     });
@@ -48,7 +48,7 @@ describe('is integer without methods', function () {
         it('isIntegerWithoutMethods(' + data.input + ')' + ' => ' + data.result, function() {
             assert(
                 isIntegerWithoutMethods(data.input) === data.result,
-                'Expected Result: ' + data.result + ' Assert Result: ' + isIntegerWithoutMethods(data.input)
+                '\n     Expected Result: ' + data.result + ' Assert Result: ' + isIntegerWithoutMethods(data.input)
             );
         });
     });

@@ -24,7 +24,7 @@ describe('find averages', function () {
         it('testData(' + data.numbers.toString() + ')' + ' => ' + data.average, function() {
             assert(
                 findAverage(data.numbers) === data.average,
-                'Expected Result: ' + findAverage(data.numbers) + ' Actual Result: ' + data.average
+                '\n     Expected Result: ' + findAverage(data.numbers) + '\n     Actual Result: ' + data.average
             );
         });
     });

@@ -1,70 +1,82 @@
-var chai = require('chai');
-var _ = require('lodash');
-var stringsByLetterToTest = {
-  1: {
-      'reverse': '.ecnetnes a si sihT',
-      'expected': 'This is a sentence.',
-  },
-  2: {
-    'reverse': '.ecnetnes rehtona si sihT',
-    'expected': 'This is another sentence.'
-  },
-  3: {
-    'reverse': '.ecnetnes rerehtona si sihT',
-    'expected': 'This is anotherer sentence.'
-  }
-};
-var stringsBySpaceToTest = {
-  1: {
-      'reverse': 'sentence. a is This',
-      'expected': 'This is a sentence.',
-  },
-  2: {
-    'reverse': 'sentence. another is This',
-    'expected': 'This is another sentence.'
-  },
-  3: {
-    'reverse': 'sentence. anotherer is This',
-    'expected': 'This is anotherer sentence.'
-  }
-};
+/*
+* jshint node:true, mocha:true
+*/
+var assert = require('chai').assert,
+    _ = require('lodash'),
+    reverseString = require('../../../modules/reverseString.js'),
+    reverseStringByLetters = reverseString.byLetter,
+    reverseStringBySpace = reverseString.bySpace,
+    reverseStringByLettersWithoutMethods = reverseString.byLetterWithoutMethods,
+    reverseStringBySpaceWithoutMethods = reverseString.bySpaceWithoutMethods,
+    testDataByLetter = [
+        {
+            'reverse': '.ecnetnes a si sihT',
+            'expected': 'This is a sentence.',
+        },
+        {
+            'reverse': '.ecnetnes rehtona si sihT',
+            'expected': 'This is another sentence.'
+        },
+        {
+            'reverse': '.ecnetnes rerehtona si sihT',
+            'expected': 'This is anotherer sentence.'
+        }
+    ],
+    testDataBySpace = [
+        {
+            'reverse': 'sentence. a is This',
+            'expected': 'This is a sentence.',
+        },
+        {
+            'reverse': 'sentence. another is This',
+            'expected': 'This is another sentence.'
+        },
+        {
+            'reverse': 'sentence. anotherer is This',
+            'expected': 'This is anotherer sentence.'
+        }
+    ];
 
 describe('reverse string by letter', function() {
-  _.forEach(stringsByLetterToTest, function(string) {
-    var reverseStringByLetters = require('../../reverseString.js').byLetter;
-
-    it('reverseStringByLetters(' + string.reverse + ')' + ' => ' + string.expected, function() {
-      chai.assert(reverseStringByLetters(string.reverse) === string.expected, 'Expected ' + reverseStringByLetters(string.reverse) + ' to equal ' + string.expected)
+    _.forEach(testDataByLetter, function (data) {
+        it('reverseStringByLetters(' + data.reverse + ')' + ' => ' + data.expected, function() {
+            assert(
+                reverseStringByLetters(data.reverse) === data.expected,
+                '\n     Expected Result: ' + data.expected + '\n     Actual Result: ' + reverseStringByLetters(data.reverse)
+            );
+        });
     });
-  });
 });
 
 describe('reverse string by space', function() {
-  _.forEach(stringsBySpaceToTest, function(string) {
-    var reverseStringBySpace = require('../../reverseString.js').bySpace;
-
-    it('reverseStringBySpace(' + string.reverse + ')' + ' => ' + string.expected, function() {
-      chai.assert(reverseStringBySpace(string.reverse) === string.expected, 'Expected ' + reverseStringBySpace(string.reverse) + ' to equal ' + string.expected)
+    _.forEach(testDataBySpace, function (data) {
+        it('reverseStringBySpace(' + data.reverse + ')' + ' => ' + data.expected, function() {
+            assert(
+                reverseStringBySpace(data.reverse) === data.expected,
+                '\n     Expected Result: ' + data.expected + '\n     Actual Result: ' + reverseStringBySpace(data.reverse)
+            );
+        });
     });
-  });
 });
 
-describe('reverse string by letter without methods', function() {
-  _.forEach(stringsByLetterToTest, function(string) {
-    var reverseStringByLettersWithoutMethods = require('../../reverseString.js').byLetterWithoutMethods;
-
-    it('reverseStringByLettersWithoutMethods(' + string.reverse + ')' + ' => ' + string.expected, function() {
-      chai.assert(reverseStringByLettersWithoutMethods(string.reverse) === string.expected, 'Expected ' + reverseStringByLettersWithoutMethods(string.reverse) + ' to equal ' + string.expected)
+describe('reverse string by letters without methods', function() {
+    _.forEach(testDataByLetter, function (data) {
+        it('reverseStringByLettersWithoutMethods(' + data.reverse + ')' + ' => ' + data.expected, function() {
+            assert(
+                reverseStringByLettersWithoutMethods(data.reverse) === data.expected,
+                '\n     Expected Result: ' + data.expected + '\n     Actual Result: ' + reverseStringByLettersWithoutMethods(data.reverse)
+            );
+        });
     });
-  });
 });
 
 describe('reverse string by space without methods', function() {
-  _.forEach(stringsBySpaceToTest, function(string) {
-    var reverseStringBySpaceWithoutMethods = require('../../reverseString.js').bySpaceWithoutMethods;
-
-    it('reverseStringBySpaceWithoutMethods(' + string.reverse + ')' + ' => ' + string.expected, function() {
-      chai.assert(reverseStringBySpaceWithoutMethods(string.reverse) === string.expected, 'Expected ' + reverseStringBySpaceWithoutMethods(string.reverse) + ' to equal ' + string.expected)
+    _.forEach(testDataBySpace, function (data) {
+        it('reverseStringBySpaceWithoutMethods(' + data.reverse + ')' + ' => ' + data.expected, function() {
+            assert(
+                reverseStringBySpaceWithoutMethods(data.reverse) === data.expected,
+                '\n     Expected Result: ' + data.expected + '\n     Actual Result: ' + reverseStringBySpaceWithoutMethods(data.reverse)
+            );
+        });
     });
-  });
 });

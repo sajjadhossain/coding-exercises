@@ -47,14 +47,14 @@ module.exports = function (createdFiles) {
         requireModuleMade = '\n' + tabDelimit + ', ' + createdFiles.args.moduleName + ' = require(\'../../' + createdFiles.args.moduleName + '\'); \n',
         describeBegin = 'describe(\'' + createdFiles.args.moduleName + '\', function () {',
         itClose = '(' + createdFiles.args.inputs + ') => some desired output\', function () {',
-        errorMessage = expected + 'expected output, ' + actual;
+        errorMessage = '\'' + expected + 'expected output, ' + actual ;
 
         for (key in createdFiles.args.functions) {
             its.push(
                 newLine + tabDelimit + itOpen + key + itClose +
                 newLine + (tabDelimit + tabDelimit) + assertBegin +
                 newLine + (tabDelimit + tabDelimit + tabDelimit) + createdFiles.args.moduleName + '.' + key + '(' + createdFiles.args.inputs + ')' + ' === \'expected value\',' +
-                newLine + (tabDelimit + tabDelimit + tabDelimit + tabDelimit) + '\'' + errorMessage + '\' \+ ' + createdFiles.args.moduleName + '.' + key + '(' + createdFiles.args.inputs + ')' +
+                newLine + (tabDelimit + tabDelimit + tabDelimit + tabDelimit) + errorMessage + '\' \+ ' + createdFiles.args.moduleName + '.' + key + '(' + createdFiles.args.inputs + ')' +
                 newLine + (tabDelimit + tabDelimit) + assertEnd +
                 newLine + tabDelimit + behaviorEnd
             )

@@ -1,20 +1,27 @@
-# Is Prime Number
+# Reverse String
 ## Objectives
 ### Objective 1
-Write a function that takes a number an returns a boolean if its a prime numbers.
+Write a function that reverse orders a passed string by letter.
 
-*A prime number is a number that is only divisible by 1 and itself.*
+**Input example** = `.ecnetnes a si sihT`
 
-**Input example** = `4`
-
-**Output example** = `false`
+**Output example** = `This is a sentence.`
 
 [Read more on Objective 1...](#Objective-1)
+
+### Objective 2
+Write a function that reverse orders a passed string by space.
+
+**Input example** = `sentence. a is This`
+
+**Output example** = `This is a sentence.`
+
+[Read more on Objective 2...](#Objective-2)
 
 ## The Functions
 I'm choosing to complete the exercise using modules for each objective. Then calling the function in a spec file. TDD if you will. I'll start with tests, then the modules.
 
-### <div id="Objective-1">Objective 1</div>
+<!--### <div id="Objective-1">Objective 1</div>
 #### The test
 See the test [here](../../javascript/modules/test/specs/isPrimeNumber.js).
 
@@ -80,3 +87,4 @@ module.exports = function (number) {
 ```
 #### The code explained
 Loop until the number and keep dividing, if not 0, return false, else it's greater than one, so, true.
+-->

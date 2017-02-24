@@ -20,7 +20,7 @@ describe('count duplicates', function () {
         it('countDuplicates(' + data.input + ') => ' + data.expectedOutcome, function() {
             assert(
                 countDuplicates(data.input) === data.expectedOutcome,
-                'Expected Result: ' + data.expectedOutcome + ' Actual Result: ' + countDuplicates(data.input)
+                '\n     Expected Result: ' + data.expectedOutcome + '\n     Actual Result: ' + countDuplicates(data.input)
             );
         });
     });

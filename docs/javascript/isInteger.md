@@ -12,7 +12,7 @@ Write a function that returns a boolean if integer.
 [Read more on Objective 1...](#Objective-1)
 
 ## The Functions
-I'm choosing to complete these exercise using modules for each objective. Then calling the function in a spec file. TDD if you will. I'll start with tests, then the modules.
+I'm choosing to complete the exercise using modules for each objective. Then calling the function in a spec file. TDD if you will. I'll start with tests, then the modules.
 
 ### <div id="Objective-1">Objective 1</div>
 #### The test
