@@ -24,6 +24,7 @@
 1. `npm install`
 2. `npm run test`
 
+#### Specs
 - [x] [Compare Objects](./javascript/test/specs/modules/compareObjects.js)
 - [x] [Compound Words](./javascript/test/specs/modules/compoundWords.js)
 - [x] [Count Duplicates](./javascript/test/specs/modules/countDuplicates.js)
