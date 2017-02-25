@@ -1,22 +1,27 @@
-var chai = require('chai');
-var _ = require('lodash');
-var inputs = {
-  1: {
-    input: '2 G L',
-    expectedOutcome: 'NO'
-  },
-  2: {
-    input: '1 GRGL',
-    expectedOutcome: 'YES'
-  }
-}
+/*
+ * jslint node:true, mocha:true
+ */
+var assert = require('chai').assert,
+    _ = require('lodash'),
+    doesCircleExist = require('../../../algorithms/index').encircular.doesCircleExist,
+    testData = [
+      {
+        input: '2 G L',
+        output: 'NO'
+      },
+      {
+        input: '1 GRGL',
+        output: 'YES'
+      }
+    ];
 
-describe('encircular', function() {
-  var doesCircleExist = require('../../encircular').doesCircleExist;
-
-  _.forEach(inputs, function(value, key) {
-    it('doesCircleExist(' + value.input + ') => ' + value.expectedOutcome, function() {
-      chai.assert(doesCircleExist(value.input) === value.expectedOutcome, 'Expected: ' + value.expectedOutcome + '; Returned: ' +  doesCircleExist(value.input));
+describe('encircular', function () {
+    _.forEach(testData, function (data) {
+        it('doesCircleExist(' + data.input + ') => ' + data.output, function() {
+            assert(
+                doesCircleExist(data.input) === data.output,
+                'Expected Result: ' + data.output + ' Actual Result: ' +  doesCircleExist(data.input)
+            );
+        });
     });
-  });
 });
