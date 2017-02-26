@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test:modules && npm run test:foundation",
+    "test": "npm run test:modules && npm run test:algorithms && npm run test:foundation",
     "test:foundation": "./node_modules/.bin/mocha javascript/test/specs/**.js",
     "test:modules": "./node_modules/.bin/mocha javascript/test/specs/modules/**.js",
     "test:algorithms": "./node_modules/.bin/mocha javascript/test/specs/algorithms/**.js"

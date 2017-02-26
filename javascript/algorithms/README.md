@@ -1,10 +1,90 @@
 # Algorithms
-## [Encircular](#Encircular)
+## Staircase
+### Objective
+You are working on a staircase function.
+
+#### Example Input
+1. `3`
+1. `1`
+
+#### Example Output
+
+1. Prints to console:
+
+    ```
+      #
+     ##
+    ###
+    ```
+1. Prints to console:
+
+    ```
+    #
+    ```
+
+### [Test](../test/specs/algorithms/staircase.js)
+```js
+// javascript/test/specs/algorithms/staircase.js
+var assert = require('chai').assert,
+    staircase = require('../../../algorithms/staircase')
+    _ = require('lodash'),
+    testData = [
+        {
+            input: 3,
+            output: '   #\n  ##\n ###'
+        },
+        {
+            input: 1,
+            output: ' #'
+        }
+    ];
+
+describe('staircase', function () {
+    _.forEach(testData, function (data) {
+        it('print(' + data.input + ') => prints the required number of stairs', function () {
+            assert(
+                staircase.print(data.input) === data.output,
+                'Expected Result: ' + data.output + ' Actual Result: ' + staircase.print(data.input)
+            );
+        });
+    })
+});
+```
+### [Code](./staircase.js)
+```js
+// javascript/algorithms/staircase.js
+var print = function (number) {
+    var increment,
+        decrement,
+        newLine = '\n',
+        stair = '#',
+        stairs = [],
+        staircase = [];
+
+    for (increment = 1; increment <= number; increment += 1) {
+        stairs.push(Array(increment + 1).join('#'));
+    }
+
+    for (increment = 0, decrement = stairs.length; increment < stairs.length; increment += 1, decrement -= 1) {
+        if (!staircase[0]) {
+            staircase.push(' ' + Array(decrement).join(' ') + stairs[increment]);
+        } else {
+            staircase.push('\n ' + Array(decrement).join(' ') + stairs[increment]);    
+        }
+    }
+
+    return staircase.join('');
+};
+
+module.exports = {
+    print: print
+}
+```
+## Encircular
 ### Objective
 You are working on a computer simulation of a mobile robot.
 
 The robot moves on an infinite plane, starting from position `0, 0`.
-
 
 Its' movements are described by a command string consisting of one or more of the following three letters:
 
@@ -27,7 +107,66 @@ If the instruction restricts the robot's movement to a circle, set index `i` to 
 1. `NO`
 1. `YES`
 
-### Test
+### [Test](../test/specs/algorithms/encircular.js)
+```js
+// javascript/test/specs/algorithms/encircular.js
+var assert = require('chai').assert,
+    _ = require('lodash'),
+    doesCircleExist = require('../../../algorithms/index').encircular.doesCircleExist,
+    testData = [
+      {
+        input: '2 G L',
+        output: 'NO'
+      },
+      {
+        input: '1 GRGL',
+        output: 'YES'
+      }
+    ];
 
-### Code
+describe('encircular', function () {
+    _.forEach(testData, function (data) {
+        it('doesCircleExist(' + data.input + ') => ' + data.output, function() {
+            assert(
+                doesCircleExist(data.input) === data.output,
+                'Expected Result: ' + data.output + ' Actual Result: ' +  doesCircleExist(data.input)
+            );
+        });
+    });
+});
+```
+### [Code](./encircular.js)
+```js
+// javascript/algorithms/encircular.js
+var doesCircleExist = function (input) {
+        var isCircle,
+            key,
+            increment1,
+            increment2,
+            inputArray = input.split(' '),
+            commands = {};
 
+        for (increment1 = 1, increment2 = 0; increment1 <= inputArray[0]; increment1 += 1, increment2 += 1) {
+            commands[increment2] = inputArray[increment1];
+        }
+
+        for (key in commands) {
+            switch (commands[key].slice(-4)) {
+                case 'GLGR':
+                    isCircle = 'YES';
+                    break;
+                case 'GRGL':
+                    isCircle = 'YES';
+                    break;
+                default:
+                    isCircle = 'NO'
+            }
+        }
+
+        return isCircle;
+    };
+
+module.exports = {
+    doesCircleExist: doesCircleExist
+}
+```

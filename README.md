@@ -20,11 +20,11 @@
 1. [Reverse String by Space without Methods](./javascript/modules/reverseString.js)
 
 ## Algorithms
-1. [Staircase](./javascript/algorithms/index.md#Staircase)
-1. [Get Neighbors](./javascript/algorithms/index.md#Get-Neighbors)
-1. [Jumping Jack](./javascript/algorithms/index.md#Jumping-Jack)
-1. [Encircular](./javascript/algorithms/index.md#Encircular)
-1. [Cutting Metal Supplies](./javascript/algorithms/index.md#Cutting-Metal-Supplies)
+1. [Staircase](./javascript/algorithms/README.md#Staircase)
+1. [Get Neighbors](./javascript/algorithms/README.md#Get-Neighbors)
+1. [Jumping Jack](./javascript/algorithms/README.md#Jumping-Jack)
+1. [Encircular](./javascript/algorithms/README.md#Encircular)
+1. [Cutting Metal Supplies](./javascript/algorithms/README.md#Cutting-Metal-Supplies)
 
 ## Docs
 1. [Compare Objects](./docs/javascript/compareObjects.md)
