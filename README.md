@@ -19,6 +19,13 @@
 1. [Reverse String by Letter without Methods](./javascript/modules/reverseString.js)
 1. [Reverse String by Space without Methods](./javascript/modules/reverseString.js)
 
+## Algorithms
+1. [Staircase](./javascript/algorithms/index.md#Staircase)
+1. [Get Neighbors](./javascript/algorithms/index.md#Get-Neighbors)
+1. [Jumping Jack](./javascript/algorithms/index.md#Jumping-Jack)
+1. [Encircular](./javascript/algorithms/index.md#Encircular)
+1. [Cutting Metal Supplies](./javascript/algorithms/index.md#Cutting-Metal-Supplies)
+
 ## Docs
 1. [Compare Objects](./docs/javascript/compareObjects.md)
 1. [Compound Words](./docs/javascript/compoundWords.md)
@@ -32,8 +39,7 @@
 1. [Reverse String](./docs/javascript/reverseString.md)
 
 ## Tests
-### Get Started
-Requires the system to have `NodeJS` and `npm` installed.
+Requires `NodeJS` and `npm`.
 
 1. `npm install`
 2. `npm run test`
@@ -49,9 +55,3 @@ Requires the system to have `NodeJS` and `npm` installed.
 1. [Is Integer](./javascript/test/specs/modules/isInteger.js)
 1. [Is Prime Number](./javascript/test/specs/modules/isPrimeNumber.js)
 1. [Reverse String](./javascript/test/specs/modules/reverseString.js)
-
-## Algorithms
-1. [Algorithms - Modules](./javascript/algorithms/index.js)
-1. [Algorithms - Documentation](./javascript/algorithms/index.js)
-1. [Algorithms - Tests](./javascript/test/specs/algorithms/index.js)
-

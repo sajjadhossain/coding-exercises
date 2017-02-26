@@ -1,5 +1,5 @@
 # Algorithms
-## Encircular
+## [Encircular](#Encircular)
 ### Objective
 You are working on a computer simulation of a mobile robot.
 
