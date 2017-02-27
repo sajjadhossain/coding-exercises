@@ -1,21 +1,21 @@
-// var chai = require('chai');
-// var coordinates = '0,0';
-// var expectedResult = {
-//   1: '1,1',
-//   2: '1,0',
-//   3: '1,-1',
-//   4: '0,-1',
-//   5: '-1,-1',
-//   6: '-1,0',
-//   7: '-1,1',
-//   8: '1,0'
-// };
-//
-// describe('get neighbors', function() {
-//   var getNeighbors = require('../../getNeighbors');
-//
-//   it.skip('getNeighbors(' + coordinates + ')' + ' => ' + expectedResult, function() {
-//     console.log(getNeighbors(coordinates))
-//     // chai.assert(getNeighbors(coordinates) === expectedResult, 'Expected ' + getNeighbors(coordinates) + ' to equal ' + expectedResult);
-//   });
-// });
+/*
+ * jslint node:true, mocha:true
+ */
+var assert = require('chai').assert,
+    getNeighbors = require('../../../algorithms/getNeighbors'),
+    input = '0,0',
+    output = {
+        '1': [ 1, 1 ],
+        '2': [ -1, -1 ],
+        '3': [ 1, -1 ],
+        '4': [ -1, 1 ]
+    };
+
+describe('get neighbors', function () {
+    it('getNeighbors(' + input + ')' + ' => ' + JSON.stringify(output), function () {
+        assert(
+            JSON.stringify(getNeighbors.coordinates(input)) === JSON.stringify(output),
+            'Expected Result: ' + JSON.stringify(output) + ' Actual Result: ' + JSON.stringify(getNeighbors.coordinates(input))
+        );
+    });
+});

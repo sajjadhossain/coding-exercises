@@ -170,3 +170,84 @@ module.exports = {
     doesCircleExist: doesCircleExist
 }
 ```
+## Get Neighbors
+### Objective
+Write a function that returns `4` neighboring coordinates for `x,y`. Imagine a grid, and the coordinates diagonal in the positive and negative directions are the values you want to use.
+
+#### Example Input
+1. `0,0`
+
+#### Example Output
+1. Returns a JSON object:
+
+    ```
+    {
+        '1': [ 1, 1 ],
+        '2': [ -1, -1 ],
+        '3': [ 1, -1 ],
+        '4': [ -1, 1 ]
+    }
+    ```
+
+### Test
+```js
+// test/specs/algorithms/getNeighbors.js
+var assert = require('chai').assert,
+    getNeighbors = require('../../../algorithms/getNeighbors'),
+    input = '0,0',
+    output = {
+        '1': [ 1, 1 ],
+        '2': [ -1, -1 ],
+        '3': [ 1, -1 ],
+        '4': [ -1, 1 ]
+    };
+
+describe('get neighbors', function () {
+    it('getNeighbors(' + input + ')' + ' => ' + JSON.stringify(output), function () {
+        assert(
+            JSON.stringify(getNeighbors.coordinates(input)) === JSON.stringify(output),
+            'Expected Result: ' + JSON.stringify(output) + ' Actual Result: ' + JSON.stringify(getNeighbors.coordinates(input))
+        );
+    });
+});
+```
+### Code
+```js
+// algorithms/getNeighbors.js
+var getNeighborsCoordinates = function (coordinates) {
+        var increment,
+            key,
+            xy = coordinates.split(','),
+            x = Number(xy[0]),
+            y = Number(xy[1]),
+            neighbors = {};
+
+        for (increment = 1; increment <= 4; increment += 1) {
+            neighbors[increment] = [];
+            switch (increment) {
+                case 1:
+                neighbors[increment].push(x + 1);
+                neighbors[increment].push(y + 1);
+                break;
+                case 2:
+                neighbors[increment].push(x - 1);
+                neighbors[increment].push(y - 1);
+                break;
+                case 3:
+                neighbors[increment].push(x + 1);
+                neighbors[increment].push(y - 1);
+                break;
+                case 4:
+                neighbors[increment].push(x - 1);
+                neighbors[increment].push(y + 1);
+                break;
+            }
+        }
+
+        return neighbors;
+    };
+
+module.exports = {
+    coordinates: getNeighborsCoordinates
+}
+```
