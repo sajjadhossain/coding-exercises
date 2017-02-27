@@ -103,7 +103,7 @@ It has one parameter:
 
 #### Constraints
 ```
-1 ≤ length of commandsi ≤ 2500
+1 ≤ length of commands[i] ≤ 2500
 1 ≤ n ≤ 10
 ```
 Each command consists of `G`, `L`, and `R` only.
