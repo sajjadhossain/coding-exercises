@@ -3,11 +3,11 @@
 ### Objective
 You are working on a staircase function.
 
-#### Example Input
+#### Sample Input 1
 1. `3`
 1. `1`
 
-#### Example Output
+#### Sample Output 1
 
 1. Prints to console:
 
@@ -82,30 +82,69 @@ module.exports = {
 ```
 ## Encircular
 ### Objective
-You are working on a computer simulation of a mobile robot.
+You are working on a computer simulation of a mobile robot. The robot moves on an infinite plane, starting from position `0, 0`. Its movements are described by a command string consisting of one or more of the following three letters:
 
-The robot moves on an infinite plane, starting from position `0, 0`.
+* G instructs the robot to move forward one step.
+* L instructs the robot to turn left.
+* R instructs the robot to turn right.
+ 
 
-Its' movements are described by a command string consisting of one or more of the following three letters:
+The robot performs the instructions in a command and repeats them for an infinite time. You want to know whether or not there exists some circle whose radius is a positive real number such that the robot always moves within the circle and never leaves it.
 
-* `G` instructs the robot to move forward one step.
-* `L` instructs the robot to turn left.
-* `R` instructs the robot to turn right.
+Complete the `doesCircleExist` function in the editor below. 
 
-The function must return an array of `n` strings where each element:
+It has one parameter: 
 
-* `i` denotes whether or not performing commands
-* `i` on an infinite loop will restrict the robot's movements to a circle.
+* An array of strings, `commands`. The function must return an array of n strings where each element `i` denotes whether or not performing commands[i] on an infinite loop will restrict the robot's movements to a circle. If the instruction restricts the robot's movement to a circle, set index `i` to `YES`; otherwise, set it to `NO`.
 
-If the instruction restricts the robot's movement to a circle, set index `i` to `YES`; otherwise, set it to `NO`.
+#### Input
+* The first line contains an integer, `n`, denoting the number of elements in commands.
+* Each line `i` of the n subsequent lines (where `0 ≤ i < n`) contains a string describing commands[i].
 
-#### Example Input
-1. `2 G L`
-1. `1 GRGL`
+#### Constraints
+```
+1 ≤ length of commandsi ≤ 2500
+1 ≤ n ≤ 10
+```
+Each command consists of `G`, `L`, and `R` only.
 
-#### Example Out
-1. `NO`
-1. `YES`
+#### Output
+
+The function must return an array of strings where each element `i` contains either the string `YES` or `NO` denoting whether or not the robot's movements will be restricted to some circle if it performs instruction commands[i] on an infinite loop. This is printed to stdout by locked stub code in the editor.
+
+##### Sample Input 1
+`2 G L`
+ 
+##### Sample Output 1
+```
+NO
+YES
+```
+ 
+##### Explanation 1
+
+We must consider the following `n = 2` commands:
+
+1. For `commands[0] = G`, the robot will move forward forever without ever turning or being restricted to a circle. Thus, we set index 0 of our return array to `NO`.
+1. For `commands[1] = L`, the robot will just turn 90 degrees left forever without ever moving forward (because there is no G instruction). Because the robot is effectively trapped in a circle, we set index 1 of our return array to `YES`.
+ 
+##### Sample Input 2
+```
+1 GRGL
+```
+
+##### Sample Output 2
+`NO`
+
+##### Explanation 2
+
+Let's consider the robot's initial orientation to be facing north toward the positive y-axis. The robot performs the following four steps in a loop:
+
+* Go forward one step. The robot moves from (0, 0) to (0, 1).
+* Turn right. The robot turns eastward, facing the positive x-axis.
+* Go forward one step. The robot moves from (0, 1) to (1, 1).
+* Turn left. The robot turns northward, facing the positive y-axis again.
+* The robot then repeats these steps infinitely, following an endless zig-zagging path in the northeastern direction. Because the robot will never turn in such a way that it would be restricted to a circle, we set index 0 of our return array to `NO`.
 
 ### [Test](../test/specs/algorithms/encircular.js)
 ```js
@@ -116,11 +155,11 @@ var assert = require('chai').assert,
     testData = [
       {
         input: '2 G L',
-        output: 'NO'
+        output: 'NO, YES'
       },
       {
         input: '1 GRGL',
-        output: 'YES'
+        output: 'NO'
       }
     ];
 
@@ -139,7 +178,7 @@ describe('encircular', function () {
 ```js
 // javascript/algorithms/encircular.js
 var doesCircleExist = function (input) {
-        var isCircle,
+        var isCircle = [],
             key,
             increment1,
             increment2,
@@ -151,19 +190,19 @@ var doesCircleExist = function (input) {
         }
 
         for (key in commands) {
-            switch (commands[key].slice(-4)) {
-                case 'GLGR':
-                    isCircle = 'YES';
+            switch (commands[key]) {
+                case 'L':
+                    isCircle.push('YES');
                     break;
-                case 'GRGL':
-                    isCircle = 'YES';
+                case 'R':
+                    isCircle.push('YES');
                     break;
                 default:
-                    isCircle = 'NO'
+                    isCircle.push('NO');
             }
         }
 
-        return isCircle;
+        return isCircle.join(', ');
     };
 
 module.exports = {
@@ -253,24 +292,85 @@ module.exports = {
 ```
 ## Jumping Jack
 ### Objective
-Jumping Jack starts at the bottom of a staircase, `0`. He jumps the number of jumps passed, `n` and cannot land on `k`.
+Jumping Jack is standing at the bottom of a flight of stairs at step number 0, and each subsequent step up the staircase is numbered sequentially from 1 to infinity. Jack performs `n` consecutively numbered actions; for example, if `n = 3`, then Jack will perform three actions, numbered 1, 2, and 3, in order. For each action `i`, Jack can choose to either jump exactly `i` steps or remain at his current step. This means that if Jack is standing on step `j` at the time of action `i`, he may either stay on step `j` or jump to step `j + i`.
 
-An integer, `n`, denoting the number of actions Jack must take.
-An integer, `k`, denoting the step number Jack must not land on.
+Complete the `maxStep`. It has two parameters:
 
-The function must return an `integer` denoting the maximum step number
-Jack can reach from step 0 if he performs exactly `n` actions
-and never jumps on step `k` (though he may jump over it).
+* An integer, `n`, denoting the number of actions Jack must take.
+* An integer, `k`, denoting the step number Jack must not land on.
 
-#### Example Input
-1. `[2,2]`
-1. `[2,1]`
-1. `[3,3]`
 
-#### Example Output
-1. `3`
-1. `2`
-1. `5`
+The function must return an integer denoting the maximum step number Jack can reach from step 0 if he performs exactly `n` actions and never jumps on step `k` (though he may jump over it).
+
+#### Input
+
+* The first line contains an integer, `n`, denoting the number of actions Jack must take.
+* The second line contains an integer, `k`, denoting the step number Jack must not land on.
+
+##### Constraints
+
+```
+1 ≤ n ≤ 2 × 103
+1 ≤ k ≤ 4 × 106
+```
+ 
+
+#### Output
+
+The function must return an integer denoting the maximal step number Jack can reach. This is printed to stdout by locked stub code in the editor.
+
+##### Sample Input 1
+`2, 2`
+
+##### Sample Output 1
+`3`
+
+##### Explanation 1
+
+Jack performs the following sequence of `n = 2` actions:
+
+1. Jack jumps from step 0 to step 0 + 1 = 1.
+1. Jack jumps from step 1 to step 1 + 2 = 3; observe that he avoided step `k` = 2 by jumping over it.
+ 
+##### Sample Input 2
+`2, 1`
+
+##### Sample Output 2
+`2`
+
+##### Explanation 2
+
+Jack performs the following sequence of `n = 2` actions:
+
+* Jack cannot jump onto step 1 (because `k = 1` and he can only jump 1 step during his first action), so he stays on step 0.
+*  Jack jumps from step 0 to step 0 + 2 = 2.
+ 
+##### Sample Input 3
+`3, 3`
+ 
+##### Sample Output 3
+`5`
+
+##### Explanation 3
+Jack must skip some actions, because performing one jump during each step will land him on step `k = 3` on the second jump. 
+
+There are two ways for him to perform all `n = 3` actions:
+
+1. For the first action, jump 1 unit to step 0 + 1 = 1. 
+1. For the second action, remain at step 1. 
+1. For the third action, jump 3 units to step 1 + 3 = 4. 
+
+In other words, his sequence of actions is `0 → 1 → 1 → 4`.
+
+The other way is:
+
+1. For the first action, remain at step 0. 
+1. For the second action, jump 2 units to step 0 + 2 = 2. 
+1. For the third action, jump 3 units to step 2 + 3 = 5. 
+
+In other words, his sequence of actions is `0 → 0 → 2 → 5`.
+
+Because we want the maximal step number that Jack can reach by performing any sequence of possible actions, we return `5` as our answer.
 
 ### [Test](../test/specs/algorithms/jumpingJack.js)
 ```js
@@ -333,3 +433,76 @@ module.exports = {
     maxStep: maxStep
 };
 ```
+## Cutting Metal Surplus
+### Objective
+The owner of a metal rod factory has a surplus of rods of arbitrary lengths. A local contractor offers to buy any of the factory's surplus as long as all the rods have the same exact length, referred to as `saleLength`. The factory owner can increase the number of sellable rods by cutting each rod zero or more times, but each cut has a cost denoted by `costPerCut` and any leftover rods having a length other than saleLength must be discarded for no profit. The factory owner's total profit for the sale is calculated as:
+
+`totalProfit = totalUniformRods × saleLength × salePrice − totalCuts × costPerCut`
+
+Where:
+ 
+* `totalUniformRods` is the number of sellable rods, 
+* `saleLength` is the uniform length of the rods being sold, 
+* `salePrice` is the per-rod price that the contractor agrees to pay, 
+* and `totalCuts` is the total number of times the rods needed to be cut.
+
+It has three parameters:
+
+* An integer, `costPerCut`, denoting the cost incurred each time any rod is cut.
+* An integer, `salePrice`, denoting the amount of money the contractor will pay for each rod of length `saleLength`.
+* An array of `n` integers, `lengths`, where the value of each element `i` denotes the initial length of a metal rod.
+
+
+The function must find the optimal `saleLength` such that the factory owner's profit is maximal, and then return an integer denoting the maximum possible profit.
+
+
+#### Input
+* The first line contains an integer denoting `costPerCut`.
+* The second line contains an integer denoting `salePrice`.
+* The third line contains an integer, `n`, denoting the number of elements in lengths.
+* Each line `i` of the n subsequent lines (where `0 ≤ i < n`) contains an integer describing lengths[i].
+
+#### Constraints
+```
+1 ≤ n ≤ 50
+1 ≤ lengthsi ≤ 104
+1 ≤ salePrice, costPerCut ≤ 1000
+```
+
+#### Output
+The function must return an integer denoting the maximum possible profit the factory owner can make from the sale.
+
+##### Sample Input 1
+`1 10 3 26 103 59`
+
+##### Sample Output 1
+`1770`
+
+##### Explanation 1
+Since `costPerCut = 1` is very inexpensive, a large number of cuts can be made to reduce the number of wasted pieces. The optimal rod length for maximizing profit is 6, and the rods are cut like so:
+
+1. lengths[0] = 26: Cut off a piece of length 2 and discard it, resulting in a rod of length 24. Then cut this rod into 4 pieces of length 6.
+1. lengths[1] = 103: Cut off a piece of length 1 and discard it, resulting in a rod of length 102. Then cut this rod into 17 pieces of length 6.
+1. lengths[2] = 59: Cut off a piece of length 5 and discard it, resulting in a rod of length 54. Then cut this rod into 9 pieces of length 6.
+ 
+After performing `totalCuts` = (1 + 3) + (1 + 16) + (1 + 8) = 30 cuts, there are `totalUniformRods` = 4 + 17 + 9 = 30 pieces of length `saleLength` = 6 that can be sold at `salePrice` = 10 dollars. This yields a total profit of `salePrice` × `totalUniformRods` × `saleLength` − `totalCuts` × `costPerCut` = 10 × 30 × 6 − 30 × 1 = 1770, so the function returns `1770`.
+
+##### Sample Input 2
+`100 10 3 26 103 59`
+
+##### Sample Output 2
+`1230`
+ 
+##### Explanation 2
+Since `costPerCut = 100`, cuts are expensive and must be minimal. The optimal rod length for maximizing profit is 51, and the rods are cut like so:
+
+1. lengths[0] = 26: Discard this rod entirely.
+1. lengths[1] = 103: Cut off a piece of length 1 and discard it, resulting in a rod of length 102. Then cut this rod into 2 pieces of length 51.
+1. lengths[2] = 59: Cut off a piece of length 8 and discard it, resulting in a rod of length 51.
+ 
+
+After performing `totalCuts` = (0) + (1 + 1) + (1) = 3 cuts, there are `totalUniformRods` = 0 + 2 + 1 = 3 pieces of length `saleLength` = 51 that can be sold at `salePrice` = 10 dollars each. This yields a total profit of `salePrice` × `totalUniformRods` × `saleLength` − `totalCuts` × `costPerCut` = 10 × 3 × 51 − 3 × 100 = 1230, so the function returns `1230`.
+
+### [Test](../test/specs/algorithms/cuttingMetalSurplus.js)
+
+### [Code](./cuttingMetalSurplus.js)

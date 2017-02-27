@@ -1,14 +1,50 @@
 # Count Duplicates
 ## Objectives
 ### Objective 1
-Write a function that takes a array of strings as input and returns a count for duplicates. The first integer passed in the array is the count for the array.
+Consider an array of `n` integers, numbers. We define a non-unique value of numbers to be an integer that appears at least twice in the array. For example, if `numbers = [1, 1, 2, 2, 2, 3, 4, 3, 9]`, then there are a total of `3` non-unique values in the array (i.e., 1, 2, and 3).
 
+Complete the `countDuplicates` function. It has 1 parameter: an array of integers, numbers. It must return an integer denoting the number of non-unique values in the numbers array.
 
-**Input example** = `[8, 1, 3, 1, 4, 5, 6, 3, 2]`
+#### Input
 
-**Output example** = `2`
+* The first line contains an integer, n, denoting the size of the numbers array.
+* Each line i of the n subsequent lines (where 0 ≤ i < n) contains an integer describing the value of `numbers[i]`.
 
-[Read more on Objective 1...](#Objective-1)
+#### Constraints
+
+1 ≤ n ≤ 1000 1 ≤ numbers[i] ≤ 1000
+
+#### Output
+
+The function must return an integer denoting the number of non-unique values in numbers. This is printed to stdout by locked stub code in the editor.
+
+##### Sample Input 1
+
+`8 1 3 1 4 5 6 3 2`
+
+##### Sample Output 1
+
+`2`
+
+#####  Explanation 1
+
+`n = 8` and numbers = `[1, 3, 1, 4, 5, 6, 3, 2]`.
+
+The integers 1 and 3 both occur more than once, so we return `2` as our answer.
+
+##### Sample Input 2
+
+`6 1 1 2 2 2 3`
+
+##### Sample Output 2
+
+`2`
+
+##### Explanation 2
+
+`n = 6` and numbers = `[1, 1, 2, 2, 2, 3]`.
+
+The integers 1 and 2 both occur more than once, so we return `2` as our answer.
 
 ## The Functions
 I'm choosing to complete the exercise using modules for each objective. Then calling the function in a spec file. TDD if you will. I'll start with tests, then the modules.

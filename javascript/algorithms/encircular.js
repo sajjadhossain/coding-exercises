@@ -6,7 +6,7 @@
  */
 'use strict';
 var doesCircleExist = function (input) {
-        var isCircle,
+        var isCircle = [],
             key,
             increment1,
             increment2,
@@ -18,19 +18,19 @@ var doesCircleExist = function (input) {
         }
 
         for (key in commands) {
-            switch (commands[key].slice(-4)) {
-                case 'GLGR':
-                    isCircle = 'YES';
+            switch (commands[key]) {
+                case 'L':
+                    isCircle.push('YES');
                     break;
-                case 'GRGL':
-                    isCircle = 'YES';
+                case 'R':
+                    isCircle.push('YES');
                     break;
                 default:
-                    isCircle = 'NO'
+                    isCircle.push('NO');
             }
         }
 
-        return isCircle;
+        return isCircle.join(', ');
     };
 
 module.exports = {

@@ -7,11 +7,11 @@ var assert = require('chai').assert,
     testData = [
       {
         input: '2 G L',
-        output: 'NO'
+        output: 'NO, YES'
       },
       {
         input: '1 GRGL',
-        output: 'YES'
+        output: 'NO'
       }
     ];
 
