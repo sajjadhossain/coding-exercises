@@ -17,7 +17,7 @@ var assert = require('chai').assert,
 
 describe('cutting metal surplus', function () {
     _.forEach(testData, function (data) {
-        it('totalProfit(' + data.input + ') => ' + data.output, function() {
+        it.skip('totalProfit(' + data.input + ') => ' + data.output, function() {
             console.log(totalProfit(data.input));
             // assert(
             //     totalProfit(data.input) === data.output,
