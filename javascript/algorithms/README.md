@@ -78,7 +78,7 @@ var print = function (number) {
 
 module.exports = {
     print: print
-}
+};
 ```
 ## Encircular
 ### Objective
@@ -168,7 +168,7 @@ var doesCircleExist = function (input) {
 
 module.exports = {
     doesCircleExist: doesCircleExist
-}
+};
 ```
 ## Get Neighbors
 ### Objective
@@ -189,9 +189,9 @@ Write a function that returns `4` neighboring coordinates for `x,y`. Imagine a g
     }
     ```
 
-### Test
+### [Test](../test/specs/algorithms/getNeighbors.js)
 ```js
-// test/specs/algorithms/getNeighbors.js
+// javascript/test/specs/algorithms/getNeighbors.js
 var assert = require('chai').assert,
     getNeighbors = require('../../../algorithms/getNeighbors'),
     input = '0,0',
@@ -211,9 +211,9 @@ describe('get neighbors', function () {
     });
 });
 ```
-### Code
+### [Code](./getNeighbors.js)
 ```js
-// algorithms/getNeighbors.js
+// javascript/algorithms/getNeighbors.js
 var getNeighborsCoordinates = function (coordinates) {
         var increment,
             key,
@@ -249,5 +249,87 @@ var getNeighborsCoordinates = function (coordinates) {
 
 module.exports = {
     coordinates: getNeighborsCoordinates
-}
+};
+```
+## Jumping Jack
+### Objective
+Jumping Jack starts at the bottom of a staircase, `0`. He jumps the number of jumps passed, `n` and cannot land on `k`.
+
+An integer, `n`, denoting the number of actions Jack must take.
+An integer, `k`, denoting the step number Jack must not land on.
+
+The function must return an `integer` denoting the maximum step number
+Jack can reach from step 0 if he performs exactly `n` actions
+and never jumps on step `k` (though he may jump over it).
+
+#### Example Input
+1. `[2,2]`
+1. `[2,1]`
+1. `[3,3]`
+
+#### Example Output
+1. `3`
+1. `2`
+1. `5`
+
+### [Test](../test/specs/algorithms/jumpingJack.js)
+```js
+// javascript/test/specs/algorithms/jumpingJack.js
+var assert = require('chai').assert,
+    _ = require('lodash'),
+    maxStep = require('../../../algorithms/jumpingJack').maxStep,
+    testData = [
+        {
+            input: [2,2],
+            output: 3
+        },
+        {
+            input: [2,1],
+            output: 2
+        },
+        {
+            input: [3,3],
+            output: 5
+        }
+    ];
+
+describe('jumping jack', function () {
+    _.forEach(testData, function (data) {
+        it('maxStep(' + data.input + ') => ' + data.output, function() {
+            assert(
+                maxStep(data.input) === data.output,
+                'Expected Result: ' + data.output + '; Actual Result: ' + maxStep(data.input)
+            );
+        });
+    });
+});
+```
+### [Code](./jumpingJack.js)
+```js
+// javascript/algorithms/jumpingJack.js
+'use strict';
+var maxStep = function (input) {
+        var increment,
+            numberOfActions = input[0],
+            stepToAvoid = input[1],
+            maxStep;
+
+        for (increment = 0; increment < numberOfActions; increment += 1) {
+            if (increment + 2 === stepToAvoid) {
+                maxStep = increment + 3;
+            }
+            if (increment + 1 === stepToAvoid) {
+                maxStep = increment + 2;
+            }
+            if (numberOfActions > 2) {
+                maxStep = increment + 3
+            }
+        }
+
+        return maxStep;
+    };
+
+module.exports = {
+    maxStep: maxStep
+};
 ```

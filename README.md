@@ -21,10 +21,10 @@
 
 ## Algorithms
 1. [Staircase](./javascript/algorithms/README.md#staircase)
-1. [Get Neighbors](./javascript/algorithms/README.md#Get-Neighbors)
-1. [Jumping Jack](./javascript/algorithms/README.md#Jumping-Jack)
+1. [Get Neighbors](./javascript/algorithms/README.md#get-neighbors)
+1. [Jumping Jack](./javascript/algorithms/README.md#jumping-jack)
 1. [Encircular](./javascript/algorithms/README.md#encircular)
-1. [Cutting Metal Supplies](./javascript/algorithms/README.md#Cutting-Metal-Supplies)
+1. [Cutting Metal Supplies](./javascript/algorithms/README.md#cutting-metal-supplies)
 
 ## Docs
 1. [Compare Objects](./docs/javascript/compareObjects.md)

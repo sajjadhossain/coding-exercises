@@ -35,4 +35,4 @@ var doesCircleExist = function (input) {
 
 module.exports = {
     doesCircleExist: doesCircleExist
-}
+};

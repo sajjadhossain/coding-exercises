@@ -21,7 +21,7 @@ var print = function (number) {
         if (!staircase[0]) {
             staircase.push(' ' + Array(decrement).join(' ') + stairs[increment]);
         } else {
-            staircase.push('\n ' + Array(decrement).join(' ') + stairs[increment]);    
+            staircase.push('\n ' + Array(decrement).join(' ') + stairs[increment]);
         }
     }
 
@@ -30,4 +30,4 @@ var print = function (number) {
 
 module.exports = {
     print: print
-}
+};
