@@ -1,28 +1,68 @@
+/*
+ * jslint node:true
+ */
+/**
+ * @param {string} variables
+ */
+'use strict';
+var totalProfit = function (variables) {
+        var increment1,
+            increment2,
+            input = variables.split(' '),
+            costPerCut = Number(input[0]),
+            salePrice = Number(input[1]),
+            totalRods = Number(input[2]),
+            totalUniformRods,
+            optimalRodLength,
+            rods = [],
+            largestRod,
+            largestRodByIncrement,
+            saleLength,
+            totalCuts,
+            maximumCut,
+            costToCut,
+            totalProfit;
 
-// // function cutByCostPerCut(length) {
-// //   var cutBy;
-// //
-// //   if (salePrice < costPerCut) {
-// //     cutBy = shortestRod / length;
-// //   } else
-// // };
-//
-// // var GCD = require('./greatestCommonDenominators');
-//
-// module.exports = function(input) {
-//   var inputArray = input.split(' ');
-//   var costPerCut = inputArray[0];
-//   var salePrice = inputArray[1];
-//   var totalRods = inputArray[2];
-//   var rods = [];
-//   var maximumProfit;
-//
-//   for(var increment = 3, increment2 = 0; increment < inputArray.length; increment++, increment2++) {
-//     rods.push(parseInt(inputArray[increment]));
-//   }
-//
-//   var longestRod = Math.max.apply(null, rods)
-//
-//
-//   // return maximumProfit;
-// };
+        for (increment1 = 0, increment2 = 3; increment1 < totalRods; increment1 += 1, increment2 += 1) {
+            rods.push(Number(input[increment2]));
+        }
+
+        totalCuts = 0;
+        largestRod = 0;
+        totalUniformRods = 0;
+
+        for (increment1 = 0; increment1 < totalRods; increment1 += 1) {
+            if (rods[increment1] > largestRod) {
+                largestRod = rods[increment1];
+            }
+        }
+
+        if (costPerCut < salePrice) {
+
+        }
+
+        // for (increment1 = 0; increment1 <= 17; increment1 += 1) {
+        //     optimalRodLength = largestRod / increment1;
+        //     if (optimalRodLength >= totalRods) {
+        //         saleLength = Math.floor(optimalRodLength);
+        //         totalCuts = increment1;
+        //         totalUniformRods += totalCuts;
+        //     }
+        // }
+
+        // for (increment1 = 0, increment2 = 0; increment1 < rods.length; increment1 += 1, increment2 += 1) {
+        //     optimalRodLength = Number(rods[increment1]) / 3
+        //     rodCuts.push()
+        // }
+
+        // maximumCut = totalUniformRods * saleLength * salePrice;
+        // costToCut = totalCuts * costPerCut;
+        // totalProfit = maximumCut - costPerCut;
+
+        return optimalRodLength;
+    };
+
+
+module.exports = {
+    totalProfit: totalProfit
+}

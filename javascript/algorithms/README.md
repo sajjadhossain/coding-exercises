@@ -1,7 +1,7 @@
 # Algorithms
 ## Staircase
 ### Objective
-You are working on a staircase function.
+You are working on a staircase function. The function takes `n` number and returns a staircase printed to the console.
 
 #### Sample Input 1
 1. `3`
@@ -84,9 +84,9 @@ module.exports = {
 ### Objective
 You are working on a computer simulation of a mobile robot. The robot moves on an infinite plane, starting from position `0, 0`. Its movements are described by a command string consisting of one or more of the following three letters:
 
-* G instructs the robot to move forward one step.
-* L instructs the robot to turn left.
-* R instructs the robot to turn right.
+* `G` instructs the robot to move forward one step.
+* `L` instructs the robot to turn left.
+* `R` instructs the robot to turn right.
  
 
 The robot performs the instructions in a command and repeats them for an infinite time. You want to know whether or not there exists some circle whose radius is a positive real number such that the robot always moves within the circle and never leaves it.
@@ -465,7 +465,7 @@ The function must find the optimal `saleLength` such that the factory owner's pr
 #### Constraints
 ```
 1 ≤ n ≤ 50
-1 ≤ lengthsi ≤ 104
+1 ≤ lengths[i] ≤ 104
 1 ≤ salePrice, costPerCut ≤ 1000
 ```
 
