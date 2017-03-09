@@ -35,7 +35,7 @@ For each within, `DES` = designer, `PRO` = product, `STA` = stakeholders.
 #### Best Practices
 1. Acceptance criteria should be documented in the form of user stories. See [Profile_Overview_Component_FSD.md](./components/stories/Profile_Overview_Component_FSD.md) `PRO`
 1. Design specifications should be contained to views or viewports where applicable.
-    - In the context of this, let's call it `Profile Overview Component`, it either is contained within a parent element, like a menu or a modal or view of its own. See [Profile_Overview_Component_Design.png](../design/Profile_Overview_Component_Design.png).
+    - In the context of this, let's call it `Profile Overview Component`, it either is contained within a parent element, like a menu or a modal or view of its own. See [Profile_Overview_Component_Design.png](./components/design/Profile_Overview_Component_Design.png).
     - Also the design should state the view port it is being enhanced for. For the example above the viewport it is optimized for is `1024X768`
 1. Design should be done mobile first. `PRO` & `DES`
 1. Design should reference a pattern library for components. `PRO` & `DES`
