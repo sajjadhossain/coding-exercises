@@ -32,4 +32,4 @@ var returnValues = function (input) {
 
 module.exports = {
     returnValues: returnValues
-}
+};

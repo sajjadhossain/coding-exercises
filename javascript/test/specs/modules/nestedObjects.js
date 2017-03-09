@@ -24,7 +24,7 @@ var nestedObjects = require('../../../modules/nestedObjects').returnValues,
 
 describe('nested objects', function (object) {
     _.forEach(testData, function (data) {
-        it('nestedObjects(' + data.input + ') => ' + data.output, function () {
+        it('nestedObjects(' + JSON.stringify(data.input) + ') => ' + JSON.stringify(data.output), function () {
             callFunction = nestedObjects(data.input).toString();
             assert(
                 callFunction === data.output.toString(),
@@ -32,4 +32,4 @@ describe('nested objects', function (object) {
             );
         });
     });
-})
+});
